@@ -1,0 +1,58 @@
+<div id="carouselExampleIndicators" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://nikearprod.vtexassets.com/assets/vtex.file-manager-graphql/images/7a553508-537c-4ab4-b290-2f2842a33d18___22c851cedb83f68bad421708f9ec6e5c.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/COPA_AMERICA_PREACTIVO_MAINNAV_9c163a8538.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://ar.puma.com/media/contentmanager/content/24SS_Ecom_TS_Football_Q2-Forever-Faster-Pack_Full-Bleed-Hero_Large_Desk_1440x500px_Combined_Action_Pre-Sale.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>Ofertas del Día</h1>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="contenido" *ngFor="let i of info">
+                <mat-card class="example-card">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title>{{i.nombre}}</mat-card-title>
+                        <mat-card-subtitle>{{i.precio}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-image src="{{i.imagen}}">
+                    <mat-card-content>
+                        <p>{{i.descripcion}}</p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

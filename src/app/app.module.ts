@@ -5,11 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { environment } from 'src/environments/environment'; //Vincula a la BD con la App
-import { AngularFireModule } from '@angular/fire/compat'; //Treabaja con las colecciones de informacion
-import { AngularFireAuthModule } from '@angular/fire/compat/auth' ;//Trabaja con la autentificación
-import { AngularFireStorageModule } from '@angular/fire/compat/storage' ; 
+// COMPONENTES GLOBALES
+import { SharedModule } from './modules/shared/shared.module';
 
+// VINCULACIONES/ IMPORTACIONES CON FIREBASE
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire/compat'; // Es para el Cloud Firestore
+import { AngularFireAuthModule } from '@angular/fire/compat/auth'; // Es para la Autentificación
+import { AngularFireStorageModule } from '@angular/fire/compat/storage'; // Es para la BD de archivos e imágenes
+
+/** 
+ * npm install firebase --force
+ * npm install @angular/fire --save --force
+*/
 
 @NgModule({
   declarations: [
@@ -19,9 +27,14 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage' ;
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    // COMPONENTES GLOBALES
+    SharedModule,
+    // Inicializa firebase en nuestro proyecto
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    // Autentificación
     AngularFireAuthModule,
-    AngularFireStorageModule,
+    // Storage -> BD de imágenes 
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
