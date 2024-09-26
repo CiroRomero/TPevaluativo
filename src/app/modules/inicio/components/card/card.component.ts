@@ -1,43 +1,58 @@
 import { Component } from '@angular/core';
-// IMPORTAMOS INTERFAZ
-import { Tienda } from 'src/app/models/tienda';
-
+import { Gym } from 'src/app/models/gym';
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']
 })
 export class CardComponent {
-  // PROPIEDAD PÚBLICA (TIPO ARRAY)
-  public info: Tienda[];
+  public info: Gym[];
 
   constructor(){
     this.info = [
       {
         id: "",
-        nombre: "CAMISETA TERCER UNIFORME BOCA JUNIORS 23/24 HEAT.RDY",
-        precio:"$74.999" ,
-        imagen: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/2608eed0de794450a50f07a7812eab8f_9366/Camiseta_Tercer_Uniforme_Boca_Juniors_23-24_HEAT.RDY_Azul_HT9917_01_laydown.jpg",
-        descripcion: "UNA CAMISETA DE BOCA JUNIORS ENFOCADA EN LOS HINCHAS, HECHA CON MATERIALES RECICLADOS. Una conexión con su hogar. Los estampados dinámicos en el frente de esta camiseta oficial de Boca Juniors adidas de fútbol se inspira en las vigas de acero angulares del icónico puente transportador que se destaca en la vista de La Boca. Creada para un juego poderoso, esta camiseta incluye tecnología HEAT.RDY y detalles livianos. El famoso escudo del equipo le pone el toque final al look. Este producto, hecho con materiales 100% reciclados, representa solo una de nuestras soluciones para acabar con los residuos plásticos."
+        nombre: "Cinta Caminadora Modelo X8400A",
+        tipo: "cardio",
+        imagen: "https://tienda.gfitness.com.ar/web/image/product.product/4651/image_1024/%5BX8400A%5D%20Cinta%20Caminadora%20Modelo%20X8400A?unique=42f19fa",
+        precio: "$ 5.347.308,85"
       },
       {
         id: "",
-        nombre: "BOTINES DE FÚTBOL COPA PURE II LEAGUE TERRENO FIRME",
-        precio: "$114.999",
-        imagen: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ea8e24819bef4d8d8fe6207adb1639ec_9366/Botines_de_Futbol_Copa_Pure_II_League_Terreno_Firme_Granate_IE7494.jpg",
-        descripcion: "JUGÁ CON CLASE CON ESTOS BOTINES DE CUERO SINTÉTICO HECHOS PARCIALMENTE CON MATERIALES RECICLADOS Para dominar un partido de verdad, debés mantener a tus compañeros de equipo y la pelota más cerca. Sentí la libertad de jugar con los cómodos y elegantes botines adidas Copa Pure II. Estos botines para jóvenes lucen detalles clásicos y un antepié en cuero sintético que los hacen icónicos y únicos. La suela para terreno firme permite controlar el partido en canchas de pasto natural seco. Este producto contiene al menos un 20% de material reciclado. Utilizando materiales reciclados reducimos los residuos, nuestra dependencia de los recursos finitos y la huella que generan los productos que fabricamos."
+        nombre: "Banco ajustable",
+        tipo: "bancos",
+        imagen: "https://tienda.gfitness.com.ar/web/image/product.product/2920/image_1024/%5BMND-FF39%5D%20Banco%20Ajustable%20F-LINE?unique=063c632",
+        precio: "$1.432.207,01"
       },
       {
         id: "",
-        nombre: "GUANTES DE ARQUERO PREDATOR PRO",
-        precio: "$100.799",
-        imagen: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/cd7c5bf9f00b48aa8218af5d00cf4b63_9366/Guantes_de_Arquero_Predator_Pro_Negro_HN3345_21_model.jpg",
-        descripcion: "UNOS GUANTES DE ARQUERO HECHOS CON UNA MEZCLA DE MATERIALES RECICLADOS Y RENOVABLES. Golpeá con precisión y controlá la pelota con estos guantes de arquero Predator de adidas sin tiras. Los detalles en silicona High Definition Grip en el dorso tejido ofrecen un ajuste preciso sin sacrificar la flexibilidad. La palma URG 2.0 incluye una envoltura para el pulgar que brinda un agarre extendido y una zona anti-roces para protegerte del desgaste que sucede entre los movimientos. Al menos un 50% de este producto está hecho de una mezcla de materiales reciclados y renovables."
-      }
+        nombre: "MULTIBANCO - HOGAR",
+        tipo: "bancos",
+        imagen: "https://tienda.gfitness.com.ar/web/image/product.product/1947/image_1024/%5BAW-066%5D%20MULTIBANCO%20-%20HOGAR?unique=063c632",
+        precio: "$ 365.500,22"
+      },
+      {
+        id: "",
+        nombre: "Vertical Traction C-LINE",
+        tipo: "maquinas",
+        imagen: "https://tienda.gfitness.com.ar/web/image/product.product/1869/image_1024/%5BTZ-6063-Y920Z%5D%20Vertical%20Traction%20C-LINE?unique=452845f",
+        precio: "$ 2.320.078,91"
+      },
+      {
+        id: "",
+        nombre: "AirBike Gfitness Elite",
+        tipo: "cardio",
+        imagen: "https://tienda.gfitness.com.ar/web/image/product.product/3872/image_1024/%5BMND-C13%5D%20AirBike%20Gfitness%20Elite?unique=ec8c2c9",
+        precio: "$ 2.008.389,11"
+      },
+      {
+        id: "",
+        nombre: "Prensa de Piernas C-LINE",
+        tipo: "maquinas",
+        imagen: "https://tienda.gfitness.com.ar/web/image/product.product/1860/image_1024/%5BTZ-6066-Y950Z%5D%20Prensa%20de%20Piernas%20%20C-LINE?unique=ee8ecdb",
+        precio: "$ 2.652.466,87"
+      },
     ]
   }
 }
-
-
-
 

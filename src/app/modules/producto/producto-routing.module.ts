@@ -1,26 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+// IMPORTACIONES DEL MODULO PRODUCTO
+import { ProductoComponent } from './pages/producto/producto.component';
+import { MaquinasComponent } from './pages/maquinas/maquinas.component';
+import { CardioComponent } from './pages/cardio/cardio.component';
+import { BancosComponent } from './pages/bancos/bancos.component';
 
-// IMPORTACIONES DE LAS VISTAS DEL MÓDULO PRODUCTO
-import { Apartado1Component } from './pages/apartado-1/apartado-1.component';
-import { Apartado2Component } from './pages/apartado-2/apartado-2.component';
-import { Apartado3Component } from './pages/apartado-3/apartado-3.component';
-import { Apartado4Component } from './pages/apartado-4/apartado-4.component';
-
+// Este módulo solo se encarga de las rutas relacionadas con productos
 const routes: Routes = [
-  {
-    path:"apartado-1",component:Apartado1Component
-  },
-  {
-    path:"apartado-2",component:Apartado2Component
-  },
-  {
-    path:"apartado-3",component:Apartado3Component
-  },
-  {
-    path:"apartado-4",component:Apartado4Component
-  }
+  { path: 'producto', component: ProductoComponent },
+  { path: 'maquinas', component: MaquinasComponent },
+  { path: 'cardio', component: CardioComponent },
+  { path: 'bancos', component: BancosComponent }
 ];
 
 @NgModule({

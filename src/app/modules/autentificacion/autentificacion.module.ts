@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 // ARCHIVO DE RUTAS DEL MÓDULO
 import { AutentificacionRoutingModule } from './autentificacion-routing.module';
 
-// VISTAS DEL MÓDULO AUTENTIFICACIÓN
+//VISTAS DEL MODULO AUTENTIFICACION
 import { RegistroComponent } from './pages/registro/registro.component';
 import { InicioSesionComponent } from './pages/inicio-sesion/inicio-sesion.component';
 
@@ -17,7 +17,6 @@ import { MatSelectModule } from '@angular/material/select';
 
 // COMPONENTES DE ANGULAR
 import { FormsModule } from '@angular/forms';
-
 @NgModule({
   declarations: [
     RegistroComponent,
@@ -26,15 +25,15 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     AutentificacionRoutingModule,
-    // MATERIAL
     MatIconModule,
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
     MatSelectModule,
-    // ANGULAR
+    //ANGULAR
     FormsModule,
   ],
+
   exports: [
     RegistroComponent,
     InicioSesionComponent,

@@ -1,10 +1,8 @@
 export interface Tienda {
     id: string;
     nombre: string;
-    precio: string;
-    imagen: string;
+    tipo: string; //SACAR AL PINGO ESTE
     descripcion: string;
-    }
-
-
-    
+    imagen: string;
+    precio: string;
+}

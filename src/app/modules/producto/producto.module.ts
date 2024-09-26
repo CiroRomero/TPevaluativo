@@ -1,23 +1,47 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+//ARCHIVO DE RUTAS
 import { ProductoRoutingModule } from './producto-routing.module';
-import { Apartado1Component } from './pages/apartado-1/apartado-1.component';
-import { Apartado3Component } from './pages/apartado-3/apartado-3.component';
-import { Apartado2Component } from './pages/apartado-2/apartado-2.component';
-import { Apartado4Component } from './pages/apartado-4/apartado-4.component';
+
+//VISTAS
+import { MaquinasComponent } from './pages/maquinas/maquinas.component';
+import { CardioComponent } from './pages/cardio/cardio.component';
+import { BancosComponent } from './pages/bancos/bancos.component';
+import { ProductoComponent } from './pages/producto/producto.component';
+
+//COMPONENTES LOCALES
+import { CardComponent } from './components/card/card.component';
+import { CardBancosComponent } from './components/card-bancos/card-bancos.component';
+import { CardMaquinasComponent } from './components/card-maquinas/card-maquinas.component';
+import { CardCardioComponent } from './components/card-cardio/card-cardio.component';
 
 
 @NgModule({
   declarations: [
-    Apartado1Component,
-    Apartado3Component,
-    Apartado2Component,
-    Apartado4Component
+    MaquinasComponent,
+    CardioComponent,
+    BancosComponent,
+    ProductoComponent,
+    CardComponent,
+    CardBancosComponent,
+    CardMaquinasComponent,
+    CardCardioComponent
+    
   ],
   imports: [
     CommonModule,
     ProductoRoutingModule
+  ],
+
+  exports: [
+    ProductoComponent,
+    CardioComponent,
+    BancosComponent,
+    MaquinasComponent,
+    CardComponent,
+    CardBancosComponent
+    
   ]
 })
 export class ProductoModule { }

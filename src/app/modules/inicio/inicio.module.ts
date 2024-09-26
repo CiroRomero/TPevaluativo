@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-
 import { InicioRoutingModule } from './inicio-routing.module';
 
 // VISTA - PÁGINA - INTERFAZ DEL USUARIO
@@ -25,7 +24,8 @@ import { MatCardModule } from '@angular/material/card';
     MatButtonModule,
     MatCardModule
   ],
-  exports:[
+
+  exports: [
     MatButtonModule,
     MatCardModule
   ]
