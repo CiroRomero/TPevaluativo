@@ -14,10 +14,12 @@
   <!-- Menu desplegable: SECCION DE PRODUCTOS -->
   <button id="menuProducto" mat-button [matMenuTriggerFor]="producto">Productos</button>
   <mat-menu #producto="matMenu">
-    <button mat-menu-item routerLink="/producto">General</button>
-    <button mat-menu-item routerLink="/maquinas">Maquinas</button>  <!--CAMBIAR TODO ESTO AL PINGO-->
-    <button mat-menu-item routerLink="/bancos">Bancos</button>
-    <button mat-menu-item routerLink="/cardio">Cardio</button>
+    <button mat-menu-item routerLink="/general">General</button> <!--NO ANDA LA MIERDA-->
+    <button mat-menu-item routerLink="/indumentaria">Indumentaria</button>
+    <button mat-menu-item routerLink="/botines">Botines</button>
+    <button mat-menu-item routerLink="/accesorios">Accesorios</button>
+    <button mat-menu-item routerLink="/afa-argentina">AFA Argentina</button>
+
   </mat-menu>
 
   <span class="example-spacer"></span>
