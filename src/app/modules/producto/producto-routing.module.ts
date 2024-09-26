@@ -6,6 +6,7 @@ import { IndumentariaComponent } from './pages/indumentaria/indumentaria.compone
 import { BotinesComponent } from './pages/botines/botines.component';
 import { AccesoriosComponent } from './pages/accesorios/accesorios.component';
 import { AfaArgentinaComponent } from './pages/afa-argentina/afa-argentina.component';
+import { GeneralComponent } from './pages/general/general.component';
 
 // Este módulo solo se encarga de las rutas relacionadas con productos
 const routes: Routes = [
@@ -20,6 +21,9 @@ const routes: Routes = [
     },
   { 
     path: 'afa-argentina', component: AfaArgentinaComponent 
+  },
+  { 
+    path: 'general', component: GeneralComponent 
   }
 ];
 

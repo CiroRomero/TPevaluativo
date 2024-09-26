@@ -8,30 +8,46 @@ import { CrudService } from 'src/app/modules/admin/services/crud.service';
   styleUrls: ['./card-indumentaria.component.css']
 })
 export class CardIndumentariaComponent {
-  // Definimos colección local de productos
-  coleccionProductos: Producto[] = [];
+// Colección de todos los productos
+coleccionProductos: Producto[] = [];
 
-  // Variable local para obtener producto seleccionado
-  productoSeleccionado!: Producto;
+// Colección de sólo productos de categoría "Indumentaria"
+coleccionIndumentaria: Producto[] = [];
 
-  // Variable para manejar estado de un modal
-  modalVisible: boolean = false;
+productoSeleccionado!: Producto;
 
-  constructor(public servicioCrud: CrudService){}
+modalVisible: boolean = false;
 
-  ngOnInit(): void{
-    this.servicioCrud.obtenerProducto().subscribe(producto => {
-      this.coleccionProductos = producto;
-    })
-  }
+constructor(public servicioCrud: CrudService){}
 
-  // Función para modal que muestre la información de un producto en específico
-  mostrarVer(info: Producto){
-    // Habilita visibilidad del modal
-    this.modalVisible = true;
+ngOnInit(): void{
+  this.servicioCrud.obtenerProducto().subscribe(producto => {
+    this.coleccionProductos = producto;
 
-    // Guarda información de un producto elegido por el usuario
-    this.productoSeleccionado = info;
-  }
+    // mostrar la colección actual de Indumentaria
+    this.mostrarProductoIndumentaria();
+  })
+}
+
+// Función para filtrar los productos que sean del tipo "Indumentaria"
+mostrarProductoIndumentaria(){
+  // forEach: itera la colección
+  this.coleccionProductos.forEach(producto => {
+    // Si la categoría del producto es igual a "indumentaria", se enviará a la 
+    // colección de juguetes específicada
+
+    if(producto.categoria === "indumentaria"){
+      // .push: sube o agrega un item a una colección
+      this.coleccionIndumentaria.push(producto);
+    }
+  })
+}
+
+// Muestra información completa de un producto elegido por el usuario
+mostrarVer(info: Producto){
+  this.modalVisible = true;
+
+  this.productoSeleccionado = info;
+}
 
 }
