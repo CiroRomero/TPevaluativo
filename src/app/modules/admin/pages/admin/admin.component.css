@@ -4,3 +4,7 @@
     text-align: center;
     justify-content: space-around;
 }
+h1 {
+    font-weight: 900; /* Para hacer que sea aún más grueso */
+
+}

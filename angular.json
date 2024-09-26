@@ -31,7 +31,16 @@
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ]
+            ],
+
+            //Me tiraba un error medio raro, y ChatGPT me dio esta solucion :)
+            "allowedCommonJsDependencies": [
+                    "crypto-js",
+                    "sweetalert2"
+                  ]
+
+
+
           },
           "configurations": {
             "production": {

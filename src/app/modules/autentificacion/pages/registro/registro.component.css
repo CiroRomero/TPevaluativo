@@ -5,7 +5,26 @@
     justify-content: center;
 }
 
-.boton{
-    width: 120px;
+h1 {
+    font-weight: 900; /* Para hacer que sea aún más grueso */
+
+}
+
+.boton {
+    width: 335px;
     margin: auto;
+    background-color: #606060; /* Cambia el color de fondo */
+    color: white; /* Color del texto */
+    padding: 20px 100px; /* Tamaño del botón */
+    font-size: 18px; /* Tamaño del texto */
+    border: none; /* Sin borde */
+    border-radius: 25px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); /* Sombra suave */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Animación suave al pasar el ratón */
+}
+
+.boton:hover {
+    background-color: #383838; /* Color al hacer hover */
+    box-shadow: 0 6px 8px rgba(255, 255, 255, 0.2); /* Sombra más intensa al hacer hover */
 }

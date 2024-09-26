@@ -1,21 +1,107 @@
-.container{
-    display: flex;
-    padding: 10px;
-    justify-content: center;
+
+/* Estilo del contenedor principal */
+.container {
+    display: flex; /* Uso de flexbox */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    width: 90%; /* Ancho del contenedor */
+    margin: 0 auto; /* Centra el contenedor en la página */
 }
 
-h1{
+/* Estilo de filas */
+.row {
+    display: flex; /* Uso de flexbox */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+    justify-content: center; /* Centra los elementos horizontalmente */
+}
+
+/* Estilo de columnas */
+.col {
+    flex: 1 1 calc(33.333% - 20px); /* Se distribuye en 3 columnas con margen */
+    margin: 10px; /* Margen alrededor de cada columna */
+    box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total */
+}
+
+/* Estilo de las tarjetas de ejemplo */
+.example-card {
+    background-color: #282828; /* Color de fondo de la tarjeta */
+    color: #ffffff; /* Color de texto blanco */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra de la tarjeta */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+    overflow: hidden; /* Oculta el contenido desbordante */
+    margin: 10px; /* Margen alrededor de la tarjeta */
+    max-width: 300px; /* Ancho máximo de la tarjeta */
+    width: 100%; /* Ancho completo */
+    display: flex; /* Uso de flexbox */
+    flex-direction: column; /* Organiza los hijos en columna */
+    justify-content: space-between; /* Espacio entre los elementos hijos */
+}
+
+/* Efecto hover en la tarjeta */
+.example-card:hover {
+    transform: translateY(-10px); /* Levanta la tarjeta al pasar el mouse */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada */
+}
+
+/* Estilo del encabezado de la tarjeta */
+.example-header-image {
+    background-color: #444; /* Color de fondo para la imagen del encabezado */
+}
+
+/* Estilo de los títulos y subtítulos en tarjetas */
+mat-card-title,
+mat-card-content p {
+    color: #ffffff; /* Color de texto blanco */
+}
+
+/* Estilo del título de la tarjeta */
+mat-card-title {
+    font-weight: bold; /* Fuente en negrita */
+    font-size: 1.2rem; /* Tamaño de fuente del título */
     text-align: center;
+
 }
 
-.contenido{
-    width: 30%;
-    display: inline-block;
-    padding: 15px;
-    border-radius: 8px;
-    margin: 10px;
+
+/* Efecto hover en botones */
+button:hover {
+    background-color: #555555; /* Cambia el fondo al pasar el mouse */
 }
 
-p{
-    padding: 5px;
+/* PRUEBA */
+
+
+/* Transiciones para subtítulos y párrafos en tarjetas */
+.mat-card-subtitle,
+.mat-card-content p {
+    transition: opacity 0.3s ease-in-out; /* Transición de opacidad suave */
+}
+
+
+/* Estilo de la clase "contenido" */
+.contenido {
+    width: 400px; /* Ancho fijo */
+    display: inline-block; /* Permite que los elementos se alineen horizontalmente */
+    padding: 15px; /* Padding interno */
+    border-radius: 8px; /* Bordes redondeados */
+    margin: 10px; /* Margen alrededor */
+}
+
+/* Estilo de los párrafos */
+p {
+    padding: 5px; /* Padding interno */
+}
+.VerMas{
+    width: 200px;
+    margin: auto;
+    background-color: #404040; /* Cambia el color de fondo */
+    color: white; /* Color del texto */
+    padding: 20px 100px; /* Tamaño del botón */
+    font-size: 15px; /* Tamaño del texto */
+    border: none; /* Sin borde */
+    border-radius: 25px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); /* Sombra suave */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Animación suave al pasar el ratón */
 }
