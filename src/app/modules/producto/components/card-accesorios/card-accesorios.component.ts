@@ -8,29 +8,45 @@ import { CrudService } from 'src/app/modules/admin/services/crud.service';
   styleUrls: ['./card-accesorios.component.css']
 })
 export class CardAccesoriosComponent {
- // Definimos colección local de productos
- coleccionProductos: Producto[] = [];
+// Colección de todos los productos
+coleccionProductos: Producto[] = [];
 
- // Variable local para obtener producto seleccionado
- productoSeleccionado!: Producto;
+// Colección de sólo productos de categoría "Juguetes"
+coleccionAccesorios: Producto[] = [];
 
- // Variable para manejar estado de un modal
- modalVisible: boolean = false;
+productoSeleccionado!: Producto;
 
- constructor(public servicioCrud: CrudService){}
+modalVisible: boolean = false;
 
- ngOnInit(): void{
-   this.servicioCrud.obtenerProducto().subscribe(producto => {
-     this.coleccionProductos = producto;
-   })
- }
+constructor(public servicioCrud: CrudService){}
 
- // Función para modal que muestre la información de un producto en específico
- mostrarVer(info: Producto){
-   // Habilita visibilidad del modal
-   this.modalVisible = true;
+ngOnInit(): void{
+  this.servicioCrud.obtenerProducto().subscribe(producto => {
+    this.coleccionProductos = producto;
 
-   // Guarda información de un producto elegido por el usuario
-   this.productoSeleccionado = info;
- }
+    // mostrar la colección actual de juguetes
+    this.mostrarProductoAccesorios();
+  })
+}
+
+// Función para filtrar los productos que sean del tipo "juguetes"
+mostrarProductoAccesorios(){
+  // forEach: itera la colección
+  this.coleccionProductos.forEach(producto => {
+    // Si la categoría del producto es igual a "juguetes", se enviará a la 
+    // colección de juguetes específicada
+
+    if(producto.categoria === "accesorios"){
+      // .push: sube o agrega un item a una colección
+      this.coleccionAccesorios.push(producto);
+    }
+  })
+}
+
+// Muestra información completa de un producto elegido por el usuario
+mostrarVer(info: Producto){
+  this.modalVisible = true;
+
+  this.productoSeleccionado = info;
+}
 }

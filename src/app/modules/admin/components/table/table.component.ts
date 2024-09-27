@@ -66,33 +66,33 @@ export class TableComponent {
       })
       .catch(error => {
         alert("Hubo un problema al agregar un nuevo producto :(");
-        
+
         this.producto.reset();
       })
     }
   }
 
-    // Función para alertar al usuario del producto que desea eliminar
-    mostrarBorrar(productoSeleccionado: Producto){
-      // abre el modal
-      this.modalVisibleProducto = true;
-  
-      // toma los valores del producto elegido
-      this.productoSeleccionado = productoSeleccionado;
-    }
-  
-    // Función para eliminar definitivamente al producto
-    borrarProducto(){
-      this.servicioCrud.eliminarProducto(this.productoSeleccionado.idProducto)
-      .then(respuesta => {
-        alert("El producto se ha eliminado correctamente.")
-      })
-      .catch(error => {
-        alert("No se ha podido eliminar el producto \n"+error);
-      })
-    }
+  // Función para alertar al usuario del producto que desea eliminar
+  mostrarBorrar(productoSeleccionado: Producto){
+    // abre el modal
+    this.modalVisibleProducto = true;
+    
+    // toma los valores del producto elegido
+    this.productoSeleccionado = productoSeleccionado;
+  }
 
-    // Función para seleccionar el producto a editar
+  // Función para eliminar definitivamente al producto
+  borrarProducto(){
+    this.servicioCrud.eliminarProducto(this.productoSeleccionado.idProducto)
+    .then(respuesta => {
+      alert("El producto se ha eliminado correctamente.")
+    })
+    .catch(error => {
+      alert("No se ha podido eliminar el producto \n"+error);
+    })
+  }
+
+  // Función para seleccionar el producto a editar
   mostrarEditar(productoSeleccionado: Producto){
     this.productoSeleccionado = productoSeleccionado;
 

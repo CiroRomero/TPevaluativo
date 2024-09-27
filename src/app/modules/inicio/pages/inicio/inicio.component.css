@@ -1,3 +1,145 @@
+/*CSS DEL CARRUSEL*/
 button:hover {
     background-color: rgba(85, 85, 85, 0.7); /* Fondo gris con transparencia */
 }
+.carousel-item img {
+    max-height: 500px; /* Ajusta la altura máxima de las imágenes */
+    object-fit: cover; /* Asegura que las imágenes cubran el contenedor */
+}
+
+.carousel-indicators button {
+    background-color: #000; /* Color de los indicadores */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(100%); /* Cambia el color de los iconos de control */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*EL VELDADERO CSSSSS*/
+
+.mi-carrusel {
+    overflow: hidden;
+    width: 100%;
+}
+
+.mi-carrusel img {
+    width: 10%; /* Ajusta este valor según el tamaño deseado */
+    transition: transform 0.5s ease, filter 0.5s ease;
+    filter: grayscale(100%);
+}
+
+.mi-carrusel img:hover {
+    filter: grayscale(0%);
+}
+
+@keyframes mi-slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+.mi-carrusel-inner {
+    display: flex;
+    animation: mi-slide 20s linear infinite;
+}
+
+.mi-carrusel-inner img {
+    min-width: 10%; /* Ajusta este valor según el tamaño deseado */
+}
+
+
+
+
+
+
+
+
+
+
+
+/*CARDS DE TARJETAS*/
+ 
+
+h3{
+    font-family: fantasy;
+  }   
+
+.payment-card {
+    background-color: #1e1e1e;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .payment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  }
+  
+  .payment-card h3 {
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+  
+  .payment-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .main-card-img {
+    width: 200px; /* Aumentado el tamaño de la imagen */
+    height: auto;
+    margin-right: 20px; /* Añadido margen derecho */
+  }
+  
+  .card-icons {
+    display: flex;
+    flex-direction: column; /* Cambiado a columna */
+    gap: 10px;
+  }
+  
+  .card-icons img {
+    width: 50px; /* Aumentado el tamaño de los iconos */
+    transition: transform 0.2s, filter 0.2s;
+    filter: grayscale(100%); /* Blanco y negro por defecto */
+  }
+  
+  .card-icons img:hover {
+    transform: scale(1.2);
+    filter: grayscale(0%); /* Color al pasar el cursor */
+  }
+  
+  .payment-card p {
+    color: #b5b5b5;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 20px;
+  }
+  
+ 

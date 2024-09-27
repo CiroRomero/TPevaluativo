@@ -11,7 +11,7 @@ export class CardIndumentariaComponent {
 // Colección de todos los productos
 coleccionProductos: Producto[] = [];
 
-// Colección de sólo productos de categoría "Indumentaria"
+// Colección de sólo productos de categoría "Juguetes"
 coleccionIndumentaria: Producto[] = [];
 
 productoSeleccionado!: Producto;
@@ -24,16 +24,16 @@ ngOnInit(): void{
   this.servicioCrud.obtenerProducto().subscribe(producto => {
     this.coleccionProductos = producto;
 
-    // mostrar la colección actual de Indumentaria
+    // mostrar la colección actual de juguetes
     this.mostrarProductoIndumentaria();
   })
 }
 
-// Función para filtrar los productos que sean del tipo "Indumentaria"
+// Función para filtrar los productos que sean del tipo "juguetes"
 mostrarProductoIndumentaria(){
   // forEach: itera la colección
   this.coleccionProductos.forEach(producto => {
-    // Si la categoría del producto es igual a "indumentaria", se enviará a la 
+    // Si la categoría del producto es igual a "juguetes", se enviará a la 
     // colección de juguetes específicada
 
     if(producto.categoria === "indumentaria"){

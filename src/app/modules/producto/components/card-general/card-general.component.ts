@@ -18,7 +18,7 @@ export class CardGeneralComponent {
  modalVisible: boolean = false;
 
  constructor(public servicioCrud: CrudService){}
-
+ 
  ngOnInit(): void{
    this.servicioCrud.obtenerProducto().subscribe(producto => {
      this.coleccionProductos = producto;

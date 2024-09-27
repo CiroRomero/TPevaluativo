@@ -105,3 +105,83 @@ p {
     box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); /* Sombra suave */
     transition: background-color 0.3s, box-shadow 0.3s; /* Animación suave al pasar el ratón */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos para el título principal (h1) */
+h1 {
+    padding: 1rem; /* Añade un relleno interno de 1 rem alrededor del h1 */
+    font-family: fantasy;
+    font-size: 2.5em; /* Establece el tamaño de la fuente a 2.5 veces el tamaño de la fuente base */
+    color: #7676FF; /* Define el color del texto como #7676FF */
+    text-align: center; /* Centra el texto horizontalmente */
+    margin-bottom: 20px; /* Añade un margen inferior de 20 píxeles */
+    text-transform: uppercase; /* Convierte todo el texto a mayúsculas */
+    letter-spacing: 2px; /* Añade un espaciado de 2 píxeles entre las letras */
+    background: linear-gradient(to right, #333333, #a80202); /* Aplica un gradiente lineal de izquierda a derecha */
+    -webkit-background-clip: text; /* Hace que el fondo del gradiente solo se aplique al texto (Webkit) */
+    -moz-background-clip: text; /* Hace que el fondo del gradiente solo se aplique al texto (Mozilla) */
+    background-clip: text; /* Hace que el fondo del gradiente solo se aplique al texto (estándar) */
+    color: transparent; /* Hace que el color del texto sea transparente, permitiendo que el gradiente sea visible */
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Añade una transición suave para el color y la sombra del texto */
+}
+
+/* Efecto al pasar el cursor sobre el h1 */
+h1:hover {
+    color: #333333; /* Cambia el color del texto a gris oscuro */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Añade una sombra al texto */
+}/* Estilos para el título principal (h1) */
+h1 {
+    padding: 1rem; /* Añade un relleno interno de 1 rem alrededor del h1 */
+    font-family: fantasy;
+    font-size: 2.5em; /* Establece el tamaño de la fuente a 2.5 veces el tamaño de la fuente base */
+    color: #7676FF; /* Define el color del texto como #7676FF */
+    text-align: center; /* Centra el texto horizontalmente */
+    margin-bottom: 20px; /* Añade un margen inferior de 20 píxeles */
+    text-transform: uppercase; /* Convierte todo el texto a mayúsculas */
+    letter-spacing: 2px; /* Añade un espaciado de 2 píxeles entre las letras */
+    background: linear-gradient(to right, #333333, #a80202); /* Aplica un gradiente lineal de izquierda a derecha */
+    -webkit-background-clip: text; /* Hace que el fondo del gradiente solo se aplique al texto (Webkit) */
+    -moz-background-clip: text; /* Hace que el fondo del gradiente solo se aplique al texto (Mozilla) */
+    background-clip: text; /* Hace que el fondo del gradiente solo se aplique al texto (estándar) */
+    color: transparent; /* Hace que el color del texto sea transparente, permitiendo que el gradiente sea visible */
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Añade una transición suave para el color y la sombra del texto */
+}
+
+/* Efecto al pasar el cursor sobre el h1 */
+h1:hover {
+    color: #333333; /* Cambia el color del texto a gris oscuro */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Añade una sombra al texto */
+}/* Estilos para el título principal (h1) */
+h1 {
+    padding: 1rem; /* Añade un relleno interno de 1 rem alrededor del h1 */
+    font-family: fantasy;
+    font-size: 2.5em; /* Establece el tamaño de la fuente a 2.5 veces el tamaño de la fuente base */
+    color: #7676FF; /* Define el color del texto como #7676FF */
+    text-align: center; /* Centra el texto horizontalmente */
+    margin-bottom: 20px; /* Añade un margen inferior de 20 píxeles */
+    text-transform: uppercase; /* Convierte todo el texto a mayúsculas */
+    letter-spacing: 2px; /* Añade un espaciado de 2 píxeles entre las letras */
+    background: linear-gradient(to right, #333333, #a80202); /* Aplica un gradiente lineal de izquierda a derecha */
+    -webkit-background-clip: text; /* Hace que el fondo del gradiente solo se aplique al texto (Webkit) */
+    -moz-background-clip: text; /* Hace que el fondo del gradiente solo se aplique al texto (Mozilla) */
+    background-clip: text; /* Hace que el fondo del gradiente solo se aplique al texto (estándar) */
+    color: transparent; /* Hace que el color del texto sea transparente, permitiendo que el gradiente sea visible */
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Añade una transición suave para el color y la sombra del texto */
+}
+
+/* Efecto al pasar el cursor sobre el h1 */
+h1:hover {
+    color: #333333; /* Cambia el color del texto a gris oscuro */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Añade una sombra al texto */
+}
