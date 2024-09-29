@@ -1,110 +1,166 @@
-
 /* Estilo del contenedor principal */
 .container {
-    display: flex; /* Uso de flexbox */
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
-    justify-content: center; /* Centra los elementos horizontalmente */
-    width: 90%; /* Ancho del contenedor */
-    margin: 0 auto; /* Centra el contenedor en la página */
+    display: flex;
+    flex-direction: column; /* Cambia la dirección a columna para alinear verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    width: 90%;
+    margin: 0 auto;
 }
 
 /* Estilo de filas */
 .row {
-    display: flex; /* Uso de flexbox */
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
-    justify-content: center; /* Centra los elementos horizontalmente */
+    display: flex;
+    flex-direction: column; /* Cambia la dirección a columna para alinear verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    width: 100%; /* Asegura que las filas ocupen todo el ancho disponible */
 }
 
 /* Estilo de columnas */
 .col {
-    flex: 1 1 calc(33.333% - 20px); /* Se distribuye en 3 columnas con margen */
-    margin: 10px; /* Margen alrededor de cada columna */
-    box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total */
+    width: 100%; /* Asegura que las columnas ocupen todo el ancho disponible */
+    margin: 10px 0; /* Espaciado vertical entre las columnas */
+    box-sizing: border-box;
 }
 
 /* Estilo de las tarjetas de ejemplo */
 .example-card {
-    background-color: #282828; /* Color de fondo de la tarjeta */
-    color: #ffffff; /* Color de texto blanco */
-    border-radius: 15px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra de la tarjeta */
-    transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
-    overflow: hidden; /* Oculta el contenido desbordante */
-    margin: 10px; /* Margen alrededor de la tarjeta */
-    max-width: 300px; /* Ancho máximo de la tarjeta */
-    width: 100%; /* Ancho completo */
-    display: flex; /* Uso de flexbox */
-    flex-direction: column; /* Organiza los hijos en columna */
-    justify-content: space-between; /* Espacio entre los elementos hijos */
+    background-color: #282828;
+    color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s, filter 0.3s; /* Añade transición para el filtro */
+    overflow: hidden;
+    margin: 10px;
+    max-width: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    position: relative; /* Permite la posición absoluta del título */
 }
 
 /* Efecto hover en la tarjeta */
 .example-card:hover {
-    transform: translateY(-10px); /* Levanta la tarjeta al pasar el mouse */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada */
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+    filter: brightness(80%); /* Oscurece la tarjeta al pasar el cursor */
+}
+
+/* Estilo del enlace que envuelve la tarjeta */
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* Estilo de los títulos en tarjetas */
+mat-card-title {
+    font-weight: bold;
+    font-size: 2.5rem; /* Tamaño de fuente más grande */
+    text-align: center;
+    color: #fff; /* Color del texto */
+    position: absolute; /* Posición absoluta para superponer el título en la imagen */
+    top: 100px; /* Ajusta la distancia desde la parte superior de la tarjeta */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Corrige la posición centrada */
+    z-index: 2; /* Asegura que esté por encima de la imagen */
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente para mejorar legibilidad */
+    padding: 10px 15px; /* Espaciado interno para hacerlo más visible */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Estilo de la imagen */
+mat-card-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(70%); /* Hace que la imagen sea un poco más oscura para destacar el título */
+    position: relative; /* Asegura que la imagen no interfiera con el título */
 }
 
 /* Estilo del encabezado de la tarjeta */
 .example-header-image {
-    background-color: #444; /* Color de fondo para la imagen del encabezado */
+    background-color: #444;
 }
-
-/* Estilo de los títulos y subtítulos en tarjetas */
-mat-card-title,
-mat-card-content p {
-    color: #ffffff; /* Color de texto blanco */
-}
-
-/* Estilo del título de la tarjeta */
-mat-card-title {
-    font-weight: bold; /* Fuente en negrita */
-    font-size: 1.2rem; /* Tamaño de fuente del título */
-    text-align: center;
-
-}
-
-
-/* Efecto hover en botones */
-button:hover {
-    background-color: #555555; /* Cambia el fondo al pasar el mouse */
-}
-
-/* PRUEBA */
-
-
-/* Transiciones para subtítulos y párrafos en tarjetas */
-.mat-card-subtitle,
-.mat-card-content p {
-    transition: opacity 0.3s ease-in-out; /* Transición de opacidad suave */
-}
-
 
 /* Estilo de la clase "contenido" */
 .contenido {
-    width: 400px; /* Ancho fijo */
-    display: inline-block; /* Permite que los elementos se alineen horizontalmente */
-    padding: 15px; /* Padding interno */
-    border-radius: 8px; /* Bordes redondeados */
-    margin: 10px; /* Margen alrededor */
+    width: 100%; /* Asegura que el contenido ocupe todo el ancho disponible */
+    display: flex; /* Cambia a flex para alinear horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px 0; /* Espaciado vertical entre los contenidos */
 }
 
-/* Estilo de los párrafos */
-p {
-    padding: 5px; /* Padding interno */
+/* Estilo del carrusel */
+.carousel {
+    flex: 1;
+    margin-left: 20px; /* Ajusta el margen según sea necesario */
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth; /* Añade desplazamiento suave */
 }
-.VerMas{
-    width: 200px;
-    margin: auto;
-    background-color: #404040; /* Cambia el color de fondo */
-    color: white; /* Color del texto */
-    padding: 20px 100px; /* Tamaño del botón */
-    font-size: 15px; /* Tamaño del texto */
-    border: none; /* Sin borde */
-    border-radius: 25px; /* Bordes redondeados */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); /* Sombra suave */
-    transition: background-color 0.3s, box-shadow 0.3s; /* Animación suave al pasar el ratón */
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
 }
+
+.carousel-card {
+    flex: 0 0 auto;
+    max-width: 300px; /* Ajusta el tamaño de las tarjetas del carrusel */
+    margin-right: 10px; /* Espacio entre las tarjetas del carrusel */
+}
+
+/* Efecto hover en botones (si en algún momento hay botones) */
+button:hover {
+    background-color: #555555;
+}
+
+.carousel-indicators button {
+    background-color: #000; /* Color de los indicadores */
+}
+
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(100%); /* Cambia el color de los iconos de control */
+}
+
+/*CSS DEL CARRUSEL*/
+button:hover {
+    background-color: rgba(85, 85, 85, 0.7); /* Fondo gris con transparencia */
+}
+.carousel-item img {
+    max-height: 500px; /* Ajusta la altura máxima de las imágenes */
+    object-fit: cover; /* Asegura que las imágenes cubran el contenedor */
+}
+
+.carousel-indicators button {
+    background-color: #000; /* Color de los indicadores */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(100%); /* Cambia el color de los iconos de control */
+}
+
+.card-group {
+    display: flex; /* Alinea las tarjetas en línea */
+    justify-content: space-around; /* Espaciado entre tarjetas */
+}
+
+.card-group mat-card {
+    flex: 1; /* Las tarjetas ocuparán espacio equitativamente */
+    margin: 10px; /* Espacio alrededor de las tarjetas */
+}
+
+
+
+
+
 
 
 

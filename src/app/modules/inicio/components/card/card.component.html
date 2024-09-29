@@ -1,29 +1,64 @@
-<h1>OFERTAS</h1> <!--HACER MAS BONITO QSY-->
+<!--<h1>OFERTAS</h1>-->
+ <!--HACER MAS BONITO QSY-->
 
 <!--CARTS FEAS-->
 <div class="container">
-    <div class="row">
-
-       <div class="col" >
-             <div *ngFor="let i of info" class="contenido">
-                <mat-card class="example-card">
-                    <mat-card-header>
-                      <mat-card-title>{{i.nombre}}</mat-card-title>
-                    </mat-card-header>
-                    <img mat-card-image src="{{i.imagen}}">
-                    <mat-card-content>
-                      <p>
-                        {{i.precio}}
-                      </p>
-                    </mat-card-content>
-                    <mat-card-actions>
-                      <button mat-button class="VerMas">Descripción</button>
-                    </mat-card-actions>
-                  </mat-card>                
+  <div class="row">
+    <div class="col" *ngFor="let i of info">
+      <div class="contenido">
+        <a [routerLink]="i.ruta" class="card-link">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title>{{i.nombre}}</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="{{i.imagen}}">
+          </mat-card>
+        </a>
+        
+        <!-- Carrusel al lado de la tarjeta -->
+        <div id="carousel-{{i.id}}" class="carousel slide">
+          <div class="carousel-inner">
+            <div *ngFor="let cardGroup of chunk(i.carruselCards, 2); let j = index" class="carousel-item" [class.active]="j === 0">
+              <div class="card-group">
+                <div *ngFor="let card of cardGroup">
+                  <a [routerLink]="card.ruta" class="card-link">
+                    <mat-card class="example-card">
+                      <mat-card-header>
+                        <mat-card-title>{{card.nombre}}</mat-card-title>
+                      </mat-card-header>
+                      <img mat-card-image src="{{card.imagen}}">
+                    </mat-card>
+                  </a>
+                </div>
+              </div>
             </div>
+          </div>
+
+          <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carousel-' + i.id" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#carousel-' + i.id" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 
+
+
+
+
+
+
+
+
+
+
+<!--GOOGLE MAPS PARA EL APARTADO DE SOBRE NOSOTROS-->
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d387.9995798756131!2d-67.95161810979727!3d-38.92405431353968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1727441144652!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 

@@ -1,38 +1,39 @@
 import { Component } from '@angular/core';
-import { Tienda } from 'src/app/models/tienda';
+import { RutaInicio } from 'src/app/models/ruta-inicio';
+
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']
 })
 export class CardComponent {
-  public info: Tienda[];
+  public info: RutaInicio[];
 
-  constructor(){
+  constructor() {
     this.info = [
       {
-        id: "",
-        nombre: "CAMISETA TERCER UNIFORME BOCA JUNIORS 23/24 HEAT.RDY",
-        precio: "$74.999",
-        imagen: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/2608eed0de794450a50f07a7812eab8f_9366/Camiseta_Tercer_Uniforme_Boca_Juniors_23-24_HEAT.RDY_Azul_HT9917_01_laydown.jpg",
-        descripcion: "UNA CAMISETA DE BOCA JUNIORS ENFOCADA EN LOS HINCHAS, HECHA CON MATERIALES RECICLADOS.",
-      
+        id: "1", // Asigna un ID único
+        nombre: "Indumentaria",
+        ruta: "/indumentaria",
+        imagen: "https://i.pinimg.com/originals/83/bc/c5/83bcc5cbb57b9b6d20ed6eadf48686d6.jpg",
+        carruselCards: [
+          { nombre: "Card 1", ruta: "/card1", imagen: "https://i.pinimg.com/originals/83/bc/c5/83bcc5cbb57b9b6d20ed6eadf48686d6.jpg" },
+          { nombre: "Card 2", ruta: "/card2", imagen: "https://i.pinimg.com/originals/e3/7b/8b/e37b8bf52b029f4e9d6bbd907a0e5e4c.jpg" },
+          { nombre: "Card 3", ruta: "/card3", imagen: "https://th-test-11.slatic.net/p/6e4cd8601a6e75f229adf69fdcd91a94.jpg" },
+          { nombre: "Card 4", ruta: "/card4", imagen: "https://th-test-11.slatic.net/p/6e4cd8601a6e75f229adf69fdcd91a94.jpg" },
+          { nombre: "Card 5", ruta: "/card5", imagen: "https://th-test-11.slatic.net/p/6e4cd8601a6e75f229adf69fdcd91a94.jpg" }
+        ]
       },
-      {
-        id: "",
-        nombre: "BOTINES DE FÚTBOL COPA PURE II LEAGUE TERRENO FIRME",
-        precio: "$114.999",
-        imagen: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ea8e24819bef4d8d8fe6207adb1639ec_9366/Botines_de_Futbol_Copa_Pure_II_League_Terreno_Firme_Granate_IE7494.jpg",
-        descripcion: "JUGÁ CON CLASE CON ESTOS BOTINES DE CUERO SINTÉTICO HECHOS PARCIALMENTE CON MATERIALES RECICLADOS.",
-      },
-      {
-        id: "",
-        nombre: "GUANTES DE ARQUERO PREDATOR PRO",
-        precio: "$100.799",
-        imagen: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/cd7c5bf9f00b48aa8218af5d00cf4b63_9366/Guantes_de_Arquero_Predator_Pro_Negro_HN3345_21_model.jpg",
-        descripcion: "UNOS GUANTES DE ARQUERO HECHOS CON UNA MEZCLA DE MATERIALES RECICLADOS Y RENOVABLES.",
-      }
-    ]
+      // Agrega los otros objetos siguiendo el mismo formato...
+    ];
+  }
+
+  // Método para dividir las tarjetas en grupos
+  chunk(array: any[], chunkSize: number) {
+    const result = [];
+    for (let i = 0; i < array.length; i += chunkSize) {
+      result.push(array.slice(i, i + chunkSize));
+    }
+    return result;
   }
 }
-
