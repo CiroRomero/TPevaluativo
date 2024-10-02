@@ -241,3 +241,102 @@ h1:hover {
     color: #333333; /* Cambia el color del texto a gris oscuro */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Añade una sombra al texto */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*PA PROBAR*/
+.product-card {
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .badge {
+    position: absolute;
+    background-color: #ff5722;
+    color: white;
+    font-size: 12px;
+    padding: 5px;
+    top: 10px;
+    left: 10px;
+    border-radius: 4px;
+  }
+  
+  .product-image img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .product-details {
+    padding: 15px;
+  }
+  
+  .product-brand {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
+  
+  .brand-logo {
+    width: 30px;
+    height: auto;
+  }
+  
+  h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  
+  p {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  .payment-info {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  .payment-info strong {
+    color: green;
+  }
+  
+  .product-status {
+    margin-top: 10px;
+  }
+  
+  .launch {
+    background-color: #00bcd4;
+    color: white;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+  
+  .wishlist {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .heart-icon {
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
