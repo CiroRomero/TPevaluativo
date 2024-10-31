@@ -1,92 +1,20 @@
-<!--<h1>OFERTAS</h1>-->
- <!--HACER MAS BONITO QSY-->
+<h1>Productos Destacados</h1>
 
-<!--CARTS FEAS-->
-<div class="container">
-  <div class="row">
-    <div class="col" *ngFor="let i of info">
-      <div class="contenido">
-        <a [routerLink]="i.ruta" class="card-link">
-          <mat-card class="example-card">
-            <mat-card-header>
-              <mat-card-title>{{i.nombre}}</mat-card-title>
-            </mat-card-header>
-            <img mat-card-image src="{{i.imagen}}">
-          </mat-card>
-        </a>
-        
-        <!-- Carrusel al lado de la tarjeta -->
-        <div id="carousel-{{i.id}}" class="carousel slide">
-          <div class="carousel-inner">
-            <div *ngFor="let cardGroup of chunk(i.carruselCards, 2); let j = index" class="carousel-item" [class.active]="j === 0">
-              <div class="card-group">
-                <div *ngFor="let card of cardGroup">
-                  <a [routerLink]="card.ruta" class="card-link">
-                    <mat-card class="example-card">
-                      <mat-card-header>
-                        <mat-card-title>{{card.nombre}}</mat-card-title>
-                      </mat-card-header>
-                      <img mat-card-image src="{{card.imagen}}">
-                    </mat-card>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carousel-' + i.id" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#carousel-' + i.id" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
+<div class="card-container">
+    <div class="card" *ngFor="let item of info">
+      <div class="badge">{{ item.lanzamiento }}</div>
+      <button class="favorite"><span class="heart-icon">❤</span></button>
+      <img [src]="item.imagen" alt="{{ item.nombre }}" class="product-image" />
+      <div class="card-content">
+        <img [src]="item.logo" alt="Logo" class="logo" />
+        <div class="price">${{ item.precio | number }}</div>
+        <div class="description">{{ item.descripcion }}</div>
+        <div class="installments">{{ item.cuotas }} ${{ item.precioCuotas | number }}</div>
       </div>
     </div>
   </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-<div class="product-card">
-  <div class="badge">ENVÍO GRATIS</div>
-  <div class="product-image">
-    <img src="assets/camiseta-boca.png" alt="Camiseta Boca Juniors">
-  </div>
-  <div class="product-details">
-    <div class="product-brand">
-      <img src="assets/adidas-logo.png" alt="Adidas Logo" class="brand-logo">
-    </div>
-    <h2>$99.999</h2>
-    <p>Camiseta adidas Boca Juniors Alternativa 1 24/25 De Hombre</p>
-    <div class="payment-info">
-      <span>Hasta 6 cuotas sin interés de</span>
-      <strong>$16.666</strong>
-    </div>
-    <div class="product-status">
-      <span class="launch">LANZAMIENTO</span>
-    </div>
-  </div>
-  <div class="wishlist">
-    <i class="heart-icon">❤️</i>
-  </div>
-</div>
-
-
-
-
-
-
-
+  
 
 
 
@@ -95,6 +23,11 @@
 
 
 <!--GOOGLE MAPS PARA EL APARTADO DE SOBRE NOSOTROS-->
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d387.9995798756131!2d-67.95161810979727!3d-38.92405431353968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1727441144652!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<!--<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d387.9995798756131!2d-67.95161810979727!3d-38.92405431353968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1727441144652!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
+
+
+
+
+
 
 

@@ -1,31 +1,31 @@
 <mat-toolbar>
   <button id="menuSecciones" mat-icon-button class="example-icon" [matMenuTriggerFor]="secciones">
-    <mat-icon>menu</mat-icon>
+    <mat-icon class="letras">menu</mat-icon>
   </button>
 
   <mat-menu #secciones="matMenu">
-    <button mat-menu-item routerLink="/inicio">Inicio</button>
-    <button mat-menu-item [matMenuTriggerFor]="producto">Productos</button>
+    <button mat-menu-item routerLink="/inicio" class="letras">Inicio</button>
+    <button mat-menu-item [matMenuTriggerFor]="producto" class="letras">Productos</button>
   </mat-menu>
 
-  <span>GoalGear</span>
-    <button id="menuInicio" mat-button routerLink="/inicio">Inicio</button>
+  <span class="logo"><img src="./assets/LogoDelNavbar.png" alt=""></span>
+    <button id="menuInicio" mat-button routerLink="/inicio" class="letras">Inicio</button>
 
   <!-- Menu desplegable: SECCION DE PRODUCTOS -->
   <button id="menuProducto" mat-button [matMenuTriggerFor]="producto">Productos</button>
   <mat-menu #producto="matMenu">
-    <button mat-menu-item routerLink="/general">General</button> <!--NO ANDA LA MIERDA-->
-    <button mat-menu-item routerLink="/indumentaria">Indumentaria</button>
-    <button mat-menu-item routerLink="/botines">Botines</button>
-    <button mat-menu-item routerLink="/accesorios">Accesorios</button>
-    <button mat-menu-item routerLink="/afa-argentina">AFA Argentina</button>
+    <button mat-menu-item routerLink="/general" class="letranegra">General</button> 
+    <button mat-menu-item routerLink="/indumentaria" class="letranegra">Indumentaria</button>
+    <button mat-menu-item routerLink="/botines" class="letranegra">Botines</button>
+    <button mat-menu-item routerLink="/accesorios" class="letranegra">Accesorios</button>
+    <button mat-menu-item routerLink="/afa-argentina" class="letranegra">AFA Argentina</button>
 
   </mat-menu>
 
   <span class="example-spacer"></span>
 
     <!-- Manejo del inicio (registro e inicio de sesión) y del cerrar sesión -->
-    <button mat-icon-button [matMenuTriggerFor]="usuario"><mat-icon>person</mat-icon></button>
+    <button mat-icon-button [matMenuTriggerFor]="usuario"><mat-icon class="letras">person</mat-icon></button>
   <mat-menu #usuario="matMenu">
     <button mat-menu-item (click)="iniciar()" *ngIf="logueado" routerLink="/registro">Registrarse</button>
     <button mat-menu-item (click)="iniciar()" *ngIf="logueado" routerLink="/inicio-sesion">Iniciar sesión</button>
@@ -33,7 +33,7 @@
   </mat-menu>
 
   <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon>shopping_cart</mat-icon>
+    <mat-icon class="letras">shopping_cart</mat-icon>
   </button>
 
      <!--Label Para Modo Oscuro-->

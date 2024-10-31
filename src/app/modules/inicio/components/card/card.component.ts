@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { RutaInicio } from 'src/app/models/ruta-inicio';
+import { CardsInicio } from 'src/app/models/cards-inicio';
+/*import { RutaInicio } from 'src/app/models/ruta-inicio';*/
 
 @Component({
   selector: 'app-card',
@@ -7,53 +8,200 @@ import { RutaInicio } from 'src/app/models/ruta-inicio';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent {
-  public info: RutaInicio[];
+  /*public info: RutaInicio[];*/
+  public info: CardsInicio[];
 
+    constructor(){
+      this.info = [
+        { 
+          ruta: '/indumentaria',  /*Esta ruta te dirije al apartado que corresponde*/
+          imagen: 'https://sporting.vtexassets.com/arquivos/ids/1454880-800-800?v=638633917330670000&width=800&height=800&aspect=true',
+          nombre: 'Camiseta adidas Boca Juniors Alternativa 1 24/25',
+          logo: 'https://sportingio.vtexassets.com/arquivos/ids/837826-auto-125?width=auto&height=125&aspect=true',
+          precio: 99999,
+          descripcion: 'Camiseta adidas Boca Juniors Alternativa 1 24/25 De Hombre',
+          cuotas: 'Hasta 6 cuotas sin interés de',
+          precioCuotas: 16666,
+          lanzamiento: 'Envío Gratis'
+        },
+        { 
+          ruta: '/card2',
+          imagen: 'https://sporting.vtexassets.com/arquivos/ids/1028168-800-800?v=638386088559500000&width=800&height=800&aspect=true',
+          nombre: 'Camiseta adidas Boca Juniors Alternativa 1 24/25',
+          logo: 'https://sportingio.vtexassets.com/arquivos/ids/837826-auto-125?width=auto&height=125&aspect=true',
+          precio: 99999,
+          descripcion: 'Camiseta adidas Boca Juniors Alternativa 1 24/25 De Hombre',
+          cuotas: 'Hasta 6 cuotas sin interés de',
+          precioCuotas: 16666,
+          lanzamiento: 'Envío Gratis'
+        },
+        { 
+          ruta: '/card3',
+          imagen: 'https://sporting.vtexassets.com/arquivos/ids/1455208-800-800?v=638633945210100000&width=800&height=800&aspect=true',
+          nombre: 'Camiseta adidas Boca Juniors Alternativa 1 24/25',
+          logo: 'https://sportingio.vtexassets.com/arquivos/ids/837826-auto-125?width=auto&height=125&aspect=true',
+          precio: 99999,
+          descripcion: 'Camiseta adidas Boca Juniors Alternativa 1 24/25 De Hombre',
+          cuotas: 'Hasta 6 cuotas sin interés de',
+          precioCuotas: 16666,
+          lanzamiento: 'Envío Gratis'
+        },
+        { 
+          ruta: '/card4',
+          imagen: 'https://sporting.vtexassets.com/arquivos/ids/1454880-800-800?v=638633917330670000&width=800&height=800&aspect=true',
+          nombre: 'Camiseta adidas Boca Juniors Alternativa 1 24/25',
+          logo: 'https://sportingio.vtexassets.com/arquivos/ids/837826-auto-125?width=auto&height=125&aspect=true',
+          precio: 99999,
+          descripcion: 'Camiseta adidas Boca Juniors Alternativa 1 24/25 De Hombre',
+          cuotas: 'Hasta 6 cuotas sin interés de',
+          precioCuotas: 16666,
+          lanzamiento: 'Envío Gratis'
+        }, 
+      ]
+    }
+  }
+
+
+
+
+
+    /*
   constructor() {
     this.info = [
       {
-        id: "1", // Asigna un ID único
+        id: "", // Asigna un ID único
         nombre: "Indumentaria",
         ruta: "/indumentaria",
         imagen: "https://i.pinimg.com/originals/83/bc/c5/83bcc5cbb57b9b6d20ed6eadf48686d6.jpg",
         carruselCards: [
           { 
-            nombre: "Card 1", 
-            ruta: "/card1", 
-            imagen: "https://sporting.vtexassets.com/arquivos/ids/1117673-800-800?v=638460101366670000&width=800&height=800&aspect=true" 
+            ruta: '/indumentaria',
+            imagen: 'https://sporting.vtexassets.com/arquivos/ids/1454880-800-800?v=638633917330670000&width=800&height=800&aspect=true',
+            nombre: 'Camiseta adidas Boca Juniors Alternativa 1 24/25',
+            logo: 'https://sportingio.vtexassets.com/arquivos/ids/837826-auto-125?width=auto&height=125&aspect=true',
+            precio: 99999,
+            descripcion: 'Camiseta adidas Boca Juniors Alternativa 1 24/25 De Hombre',
+            cuotas: 'Hasta 6 cuotas sin interés de',
+            precioCuotas: 16666,
+            lanzamiento: 'LANZAMIENTO'
           },
           { 
-            nombre: "Card 2", 
-            ruta: "/card2", 
-            imagen: "https://sporting.vtexassets.com/arquivos/ids/1454880-800-800?v=638633917330670000&width=800&height=800&aspect=true" 
+            ruta: '/card2',
+            imagen: 'https://sporting.vtexassets.com/arquivos/ids/1028168-800-800?v=638386088559500000&width=800&height=800&aspect=true',
+            nombre: 'Camiseta adidas Boca Juniors Alternativa 1 24/25',
+            logo: 'https://sportingio.vtexassets.com/arquivos/ids/837826-auto-125?width=auto&height=125&aspect=true',
+            precio: 99999,
+            descripcion: 'Camiseta adidas Boca Juniors Alternativa 1 24/25 De Hombre',
+            cuotas: 'Hasta 6 cuotas sin interés de',
+            precioCuotas: 16666,
+            lanzamiento: 'LANZAMIENTO'
           },
           { 
-            nombre: "Card 3", 
-            ruta: "/card3", 
-            imagen: "https://sporting.vtexassets.com/arquivos/ids/952734-800-800?v=638325386672400000&width=800&height=800&aspect=true" 
+            ruta: '/card3',
+            imagen: 'https://sporting.vtexassets.com/arquivos/ids/1455208-800-800?v=638633945210100000&width=800&height=800&aspect=true',
+            nombre: 'Camiseta adidas Boca Juniors Alternativa 1 24/25',
+            logo: 'https://sportingio.vtexassets.com/arquivos/ids/837826-auto-125?width=auto&height=125&aspect=true',
+            precio: 99999,
+            descripcion: 'Camiseta adidas Boca Juniors Alternativa 1 24/25 De Hombre',
+            cuotas: 'Hasta 6 cuotas sin interés de',
+            precioCuotas: 16666,
+            lanzamiento: 'LANZAMIENTO'
           },
           { 
-            nombre: "Card 4", 
-            ruta: "/card4", 
-            imagen: "https://sporting.vtexassets.com/arquivos/ids/1330769-800-800?v=638558039289430000&width=800&height=800&aspect=true" 
+            ruta: '/card4',
+            imagen: 'https://sporting.vtexassets.com/arquivos/ids/1454880-800-800?v=638633917330670000&width=800&height=800&aspect=true',
+            nombre: 'Camiseta adidas Boca Juniors Alternativa 1 24/25',
+            logo: 'https://sportingio.vtexassets.com/arquivos/ids/837826-auto-125?width=auto&height=125&aspect=true',
+            precio: 99999,
+            descripcion: 'Camiseta adidas Boca Juniors Alternativa 1 24/25 De Hombre',
+            cuotas: 'Hasta 6 cuotas sin interés de',
+            precioCuotas: 16666,
+            lanzamiento: 'LANZAMIENTO'
           },
-          {
-             nombre: "Card 5", 
-             ruta: "/card5", 
-             imagen: "https://sporting.vtexassets.com/arquivos/ids/1028605-800-800?v=638386692711800000&width=800&height=800&aspect=true" 
-            }
+          { 
+            ruta: '/indumentaria',
+            imagen: 'https://sporting.vtexassets.com/arquivos/ids/1028168-800-800?v=638386088559500000&width=800&height=800&aspect=true',
+            nombre: 'Camiseta adidas Boca Juniors Alternativa 1 24/25',
+            logo: 'https://sportingio.vtexassets.com/arquivos/ids/837826-auto-125?width=auto&height=125&aspect=true',
+            precio: 99999,
+            descripcion: 'Camiseta adidas Boca Juniors Alternativa 1 24/25 De Hombre',
+            cuotas: 'Hasta 6 cuotas sin interés de',
+            precioCuotas: 16666,
+            lanzamiento: 'LANZAMIENTO'
+          },
+          { 
+            ruta: '/card6',
+            imagen: 'https://sporting.vtexassets.com/arquivos/ids/1455208-800-800?v=638633945210100000&width=800&height=800&aspect=true',
+            nombre: 'Camiseta adidas Boca Juniors Alternativa 1 24/25',
+            logo: 'https://sportingio.vtexassets.com/arquivos/ids/837826-auto-125?width=auto&height=125&aspect=true',
+            precio: 99999,
+            descripcion: 'Camiseta adidas Boca Juniors Alternativa 1 24/25 De Hombre',
+            cuotas: 'Hasta 6 cuotas sin interés de',
+            precioCuotas: 16666,
+            lanzamiento: 'LANZAMIENTO'
+          },    
         ]
       },
-      // Agrega los otros objetos siguiendo el mismo formato...
     ];
   }
 
   // Método para dividir las tarjetas en grupos
-  chunk(array: any[], chunkSize: number) {
-    const result = [];
-    for (let i = 0; i < array.length; i += chunkSize) {
-      result.push(array.slice(i, i + chunkSize));
+  chunk(array: any[], size: number): any[] {
+    const result: any[] = [];
+    for (let i = 0; i < array.length; i += size) {
+      result.push(array.slice(i, i + size));
     }
     return result;
-  }
+  } 
 }
+  */
+ /*         { 
+            ruta: "/card2", 
+            imagen: "https://sporting.vtexassets.com/arquivos/ids/1454880-800-800?v=638633917330670000&width=800&height=800&aspect=true" 
+            nombre: "Card 2", 
+            logo: "",
+            precio: "",
+            descripcion: "",
+            cuotas: "",
+            precioCuotas: "",
+            Lanzamiento: ""
+          },
+          { 
+           
+            ruta: "/card3", 
+            imagen: "https://sporting.vtexassets.com/arquivos/ids/952734-800-800?v=638325386672400000&width=800&height=800&aspect=true" 
+            nombre: "Card 3", 
+            logo: "",
+            precio: "",
+            descripcion: "",
+            cuotas: "",
+            precioCuotas: "",
+            Lanzamiento: ""
+          },
+          { 
+           
+           ruta: "/card4", 
+           imagen: "https://sporting.vtexassets.com/arquivos/ids/1330769-800-800?v=638558039289430000&width=800&height=800&aspect=true" 
+           nombre: "Card 4", 
+            logo: "",
+            precio: "",
+            descripcion: "",
+            cuotas: "",
+            precioCuotas: "",
+            Lanzamiento: ""
+          },
+          {
+             ruta: "/card5", 
+             imagen: "https://sporting.vtexassets.com/arquivos/ids/1028605-800-800?v=638386692711800000&width=800&height=800&aspect=true" 
+             nombre: "Card 5", 
+              logo: "",
+              precio: "",
+              descripcion: "",
+              cuotas: "",
+              precioCuotas: "",
+              Lanzamiento: "" 
+          }
+*/          
+
+
+
