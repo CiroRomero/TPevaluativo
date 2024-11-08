@@ -1,8 +1,82 @@
 
 
-  <h1>Productos Destacados</h1>
+  <h1>Indumentaria Destacados</h1>
 
 
+
+  <div class="carrusel-container">
+    <div class="carrusel">
+      <div class="card-container" *ngFor="let item of info">
+        <div class="card">
+          <div class="badge">{{ item.lanzamiento }}</div>
+          <img [src]="item.imagen" alt="{{ item.nombre }}" class="product-image" />
+          <div class="card-content">
+            <img [src]="item.logo" alt="Logo" class="logo" />
+            <div class="price">${{ item.precio | number }}</div>
+            <div class="description">{{ item.nombre }}</div>
+            <div class="installments">{{ item.cuotas }} ${{ item.precioCuotas | number }}</div>
+          </div>
+        </div>
+      </div>
+      <!-- Duplicamos el contenido del carrusel para crear el efecto infinito -->
+      <div class="card-container" *ngFor="let item of info">
+        <div class="card">
+          <div class="badge">{{ item.lanzamiento }}</div>
+          <img [src]="item.imagen" alt="{{ item.nombre }}" class="product-image" />
+          <div class="card-content">
+            <img [src]="item.logo" alt="Logo" class="logo" />
+            <div class="price">${{ item.precio | number }}</div>
+            <div class="description">{{ item.nombre }}</div>
+            <div class="installments">{{ item.cuotas }} ${{ item.precioCuotas | number }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="prev" (click)="moveSlide(-1)">&#10094;</button>
+    <button class="next" (click)="moveSlide(1)">&#10095;</button>
+  </div>
+  
+
+
+
+
+  <h1>Calzado Destacado</h1>
+
+
+  <div class="carrusel-container">
+    <div class="carrusel">
+      <div class="card-container" *ngFor="let item of info">
+        <div class="card">
+          <div class="badge">{{ item.lanzamiento }}</div>
+          <img [src]="item.imagen" alt="{{ item.nombre }}" class="product-image" />
+          <div class="card-content">
+            <img [src]="item.logo" alt="Logo" class="logo" />
+            <div class="price">${{ item.precio | number }}</div>
+            <div class="description">{{ item.nombre }}</div>
+            <div class="installments">{{ item.cuotas }} ${{ item.precioCuotas | number }}</div>
+          </div>
+        </div>
+      </div>
+      <!-- Duplicamos el contenido del carrusel para crear el efecto infinito -->
+      <div class="card-container" *ngFor="let item of info">
+        <div class="card">
+          <div class="badge">{{ item.lanzamiento }}</div>
+          <img [src]="item.imagen" alt="{{ item.nombre }}" class="product-image" />
+          <div class="card-content">
+            <img [src]="item.logo" alt="Logo" class="logo" />
+            <div class="price">${{ item.precio | number }}</div>
+            <div class="description">{{ item.nombre }}</div>
+            <div class="installments">{{ item.cuotas }} ${{ item.precioCuotas | number }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="prev" (click)="moveSlide(-1)">&#10094;</button>
+    <button class="next" (click)="moveSlide(1)">&#10095;</button>
+  </div>
+
+  <!------------------------------------------------------------------------------------------------------------------------
+  DISEÑO DE CARD
   <div class="card-container">
     <div class="card" *ngFor="let item of info">
       <div class="badge">{{ item.lanzamiento }}</div>
@@ -12,14 +86,12 @@
         <div class="price">${{ item.precio | number }}</div>
         <div class="description">{{ item.descripcion }}</div>
         <div class="installments">{{ item.cuotas }} ${{ item.precioCuotas | number }}</div>
-        <!--<button>Ver Mas</button>     Hacer mas piola y que sean una ruta hacia el producto o el tipo de produto--> 
+        <button>Ver Mas</button>     Hacer mas piola y que sean una ruta hacia el producto o el tipo de produto 
       </div>
     </div>
   </div>
+  ------------------------------------------------------------------------------------------------------------------------->
   
-
-
-
 
 
 
@@ -33,3 +105,16 @@
 
 
 
+<div class="ContainerImgIzquierda">
+  <!-- Imagen a la izquierda -->
+  <div class="ImgIzquierda">
+      <img src="https://easycdn.es/12/i/como-se-construyen-las-pistas-de-futbol-sala-y-cuales-son-sus-caracteristicas-principales_5512.webp" alt="Imagen">
+  </div>
+
+  <!-- Cuadrado con Titulo, Subtitulo y Botón a la derecha -->
+  <div class="square">
+      <h1 id="title">Futbol Sala</h1>
+      <h3 id="subtitle">CALZADO, CAMPERAS, ACCEOSRIOS Y MÁS</h3>
+      <button id="myButton">Ver Productos</button>
+  </div>
+</div>

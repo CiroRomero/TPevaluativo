@@ -12,11 +12,11 @@ import { SharedModule } from './modules/shared/shared.module';
 import { environment } from './environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';// Es para el Cloud Firestore
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';// Es para la Autentificación
-import { AngularFireStorageModule } from '@angular/fire/compat/storage';// Es para la BD de archivos e imágenes
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
