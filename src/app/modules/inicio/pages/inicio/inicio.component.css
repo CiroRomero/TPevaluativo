@@ -18,8 +18,16 @@ button:hover {
 
 
 
-
-
+.fondo{
+ background-color:black;
+}
+.ImgInicio {
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 100%;
+  height: auto;
+}
 
 
 

@@ -1,9 +1,9 @@
 /*Estilos Para Modo Oscuro*/
 
 body{
-    transition: all 1.5 ease;
-    background-color: #ffffff;
-}
+    
+        background: linear-gradient(to bottom, #000000, #13072e);
+    }
 #toggle{
     display: none;
 }

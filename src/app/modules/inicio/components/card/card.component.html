@@ -1,16 +1,18 @@
-<h1>Productos Destacados</h1>
 
 
-<div class="card-container">
+  <h1>Productos Destacados</h1>
+
+
+  <div class="card-container">
     <div class="card" *ngFor="let item of info">
       <div class="badge">{{ item.lanzamiento }}</div>
-      <button class="favorite"><span class="heart-icon">❤</span></button>
       <img [src]="item.imagen" alt="{{ item.nombre }}" class="product-image" />
       <div class="card-content">
         <img [src]="item.logo" alt="Logo" class="logo" />
         <div class="price">${{ item.precio | number }}</div>
         <div class="description">{{ item.descripcion }}</div>
         <div class="installments">{{ item.cuotas }} ${{ item.precioCuotas | number }}</div>
+        <!--<button>Ver Mas</button>     Hacer mas piola y que sean una ruta hacia el producto o el tipo de produto--> 
       </div>
     </div>
   </div>
