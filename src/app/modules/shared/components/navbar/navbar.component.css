@@ -17,6 +17,10 @@
     #menuProducto{
         display: none;
     }
+
+    #nosotros{
+      display: none;
+  }
   }
   
   @media (min-width: 700px) {

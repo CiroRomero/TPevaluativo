@@ -2,28 +2,25 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // IMPORTACIONES DEL MODULO PRODUCTO
-import { IndumentariaComponent } from './pages/indumentaria/indumentaria.component';
-import { BotinesComponent } from './pages/botines/botines.component';
-import { AccesoriosComponent } from './pages/accesorios/accesorios.component';
-import { AfaArgentinaComponent } from './pages/afa-argentina/afa-argentina.component';
-import { GeneralComponent } from './pages/general/general.component';
+import { CardAccesoriosComponent } from './components/card-accesorios/card-accesorios.component';
+import { CardBotinesComponent } from './components/card-botines/card-botines.component';
+import { CardIndumentariaComponent } from './components/card-indumentaria/card-indumentaria.component';
+import { CardGeneralComponent } from './components/card-general/card-general.component';
 
 // Este módulo solo se encarga de las rutas relacionadas con productos
 const routes: Routes = [
   { 
-    path: 'indumentaria', component: IndumentariaComponent
+    path: 'indumentaria', component: CardIndumentariaComponent
   },
   { 
-    path: 'botines', component: BotinesComponent
+    path: 'botines', component: CardBotinesComponent
    },
   {
-     path: 'accesorios', component: AccesoriosComponent
+     path: 'accesorios', component: CardAccesoriosComponent
     },
+
   { 
-    path: 'afa-argentina', component: AfaArgentinaComponent 
-  },
-  { 
-    path: 'general', component: GeneralComponent 
+    path: 'general', component: CardGeneralComponent 
   }
 ];
 

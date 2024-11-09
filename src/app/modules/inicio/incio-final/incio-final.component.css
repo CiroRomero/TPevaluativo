@@ -1,118 +1,36 @@
-/*PRIMER CUADRO*/
 /* Contenedor principal */
-.ContainerImgIzquierda {
-    display: flex;
-    justify-content: space-between; /* Distribuye los elementos de manera horizontal */
-    align-items: flex-start; /* Alinea los elementos al principio (arriba) */
-    max-width: 1400px;  /* Aumentamos el tamaño máximo del contenedor */
-    padding: 60px;  /* Aumentamos el padding para darle más espacio */
-    margin: auto;  /* Centrado automático en la pantalla */
-  
-  }
-  
-  /* Imagen a la izquierda */
-  .ImgIzquierda {
-    flex: 1;  /* La imagen ocupa el 50% del contenedor */
-    margin-right: 40px;  /* Aumentamos el espacio entre la imagen y el cuadrado */
-    width: 250px; /* Ancho fijo */
-    height: 150px; /* Alto fijo */
-  }
-  
-  .ImgIzquierda img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    max-width: 600px;  /* Aumentamos el tamaño máximo de la imagen */
-  }
-  
-  /* Cuadrado con contenido a la derecha */
-  .square {
-    flex: 1;
-    background-color: #b4a362;
-    color: #fff;
-    padding: 30px;  /* Ajustamos el padding dentro del cuadrado */
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;  /* Los elementos se apilan verticalmente */
-    justify-content: flex-start;  /* Alineamos los elementos desde el principio */
-    max-width: 600px;
-    height: auto;  /* Se ajusta dinámicamente al contenido */
-    min-height: 350px;  /* Establecemos una altura mínima para asegurar que todo quepa */
-  }
-  
-  .square h1 {
-    font-size: 28px;
-    margin: 0;
-  }
-  
-  .square h3 {
-    font-size: 22px;
-    margin: 10px 0;
-  }
-  
-  .square button {
-    padding: 15px 25px;
-    background-color: #ff9800;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-    margin-top: 20px; /* Añadimos espacio entre el subtítulo y el botón */
-  }
-  
-  .square button:hover {
-    background-color: #f57c00;
-  }
-  
-  /* Responsividad: Ajustes para pantallas más pequeñas */
-  @media (max-width: 768px) {
-    .ContainerImgIzquierda {
-      flex-direction: column;  /* Los elementos se colocan en columna en pantallas pequeñas */
-      align-items: center;
-      padding: 20px;
-    }
-  
-    .ImgIzquierda {
-      margin-right: 0;
-      margin-bottom: 20px;
-    }
-  
-    .square {
-      width: 100%;  /* El cuadrado ocupará todo el ancho disponible */
-      height: auto;  /* Ajustamos la altura a medida que cambia el contenido */
-      padding: 20px;
-    }
-  }
-
-
-  /*------------------------------------------------------------------------------SEGUNDO CUADRO------------------------------------------------------------------------------*/
-  /* Contenedor principal con la imagen a la izquierda */
-.ContainerImgIzquierda {
+.ContainerImgIzquierda, .ContainerImgDerecha {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  width: 100%;
+  align-items: center;
   max-width: 1400px;
-  padding: 60px;
+  padding: 20px;
   margin: auto;
+  gap: 40px; /* Espaciado uniforme entre imagen y cuadro */
+  flex-wrap: wrap; /* Permite que los elementos se ajusten cuando no haya suficiente espacio */
 }
 
-.ImgIzquierda {
+/* Imagen y cuadro con tamaños iguales */
+.ImgIzquierda, .ImgDerecha, .square {
   flex: 1;
-  margin-right: 40px;
+  max-width: 600px; /* Tamaño máximo para mantener uniformidad */
+  height: 350px; /* Altura fija para imágenes y cuadros */
+  box-sizing: border-box; /* Incluye el padding en el tamaño total */
+  display: flex;
+  align-items: center; /* Asegura que los elementos estén alineados correctamente */
+  justify-content: center;
 }
 
-.ImgIzquierda img {
+/* Estilo de las imágenes */
+.ImgIzquierda img, .ImgDerecha img {
   width: 100%;
-  height: auto;
+  height: 100%; /* Asegura que la imagen ocupe todo el espacio */
+  object-fit: cover; /* Recorta la imagen para llenar el área sin distorsión */
   border-radius: 10px;
-  max-width: 600px;
 }
 
+/* Cuadro de contenido */
 .square {
-  flex: 1;
   background-color: #b4a362;
   color: #fff;
   padding: 30px;
@@ -120,22 +38,21 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  max-width: 600px;
-  height: auto;
-  min-height: 350px;
+  height: 100%; /* Asegura que el cuadro tenga la misma altura */
 }
 
-.square h1 {
+/* Estilos de texto y botón */
+.square .title {
   font-size: 28px;
   margin: 0;
 }
 
-.square h3 {
+.square .subtitle {
   font-size: 22px;
   margin: 10px 0;
 }
 
-.square button {
+.square .myButton {
   padding: 15px 25px;
   background-color: #ff9800;
   color: white;
@@ -147,49 +64,41 @@
   margin-top: 20px;
 }
 
-.square button:hover {
+.square .myButton:hover {
   background-color: #f57c00;
-}
-
-/* Contenedor principal con la imagen a la derecha */
-.ContainerImgDerecha {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 100%;
-  max-width: 1400px;
-  padding: 60px;
-  margin: auto;
-}
-
-.ImgDerecha {
-  flex: 1;
-  margin-left: 40px; /* Aumentamos el espacio entre el cuadrado y la imagen */
-}
-
-.ImgDerecha img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  max-width: 600px;
 }
 
 /* Responsividad */
 @media (max-width: 768px) {
   .ContainerImgIzquierda, .ContainerImgDerecha {
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
+    flex-direction: row; /* Mantén los elementos en una fila */
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 20px;
   }
 
-  .ImgIzquierda, .ImgDerecha {
-      margin: 0;
-      margin-bottom: 20px;
+  .ImgIzquierda, .ImgDerecha, .square {
+    max-width: 45%; /* Se ajusta el tamaño para que no se apilen */
+    height: 300px; /* Mantén la altura consistente */
   }
 
   .square {
-      width: 100%;
-      height: auto;
-      padding: 20px;
+    padding: 15px; /* Reduce el padding en dispositivos más pequeños */
+  }
+
+  .square .title {
+    font-size: 24px; /* Ajusta el tamaño de la fuente */
+  }
+
+  .square .subtitle {
+    font-size: 18px; /* Ajusta el tamaño de la fuente */
+  }
+
+  .square .myButton {
+    padding: 12px 20px; /* Ajusta el tamaño del botón */
+    font-size: 14px; /* Ajusta el tamaño del texto del botón */
   }
 }
+
+

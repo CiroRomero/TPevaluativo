@@ -1,11 +1,8 @@
-
-
 <h1>Calzado Destacados</h1>
-
-
 
 <div class="carrusel-container">
   <div class="carrusel">
+    <!-- Tarjetas dinámicas de productos -->
     <div class="card-container" *ngFor="let item of info">
       <div class="card">
         <div class="badge">{{ item.lanzamiento }}</div>
@@ -18,7 +15,8 @@
         </div>
       </div>
     </div>
-    <!-- Duplicamos el contenido del carrusel para crear el efecto infinito -->
+
+    <!-- Duplicamos las tarjetas para el efecto de carrusel infinito -->
     <div class="card-container" *ngFor="let item of info">
       <div class="card">
         <div class="badge">{{ item.lanzamiento }}</div>
@@ -32,6 +30,8 @@
       </div>
     </div>
   </div>
+
+  <!-- Botones para mover el carrusel -->
   <button class="prev" (click)="moveSlide2(-1)">&#10094;</button>
   <button class="next" (click)="moveSlide2(1)">&#10095;</button>
 </div>

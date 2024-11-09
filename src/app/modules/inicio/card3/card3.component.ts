@@ -118,7 +118,7 @@ export class Card3Component {
   slideIndex = 0; // Índice del primer item visible
   itemsToShow = 3; // Cuántas tarjetas queremos mostrar a la vez
 
-  moveSlide(step: number): void {
+  moveSlide3(step: number): void {
     const totalSlides = this.info.length;
     this.slideIndex += step;
 

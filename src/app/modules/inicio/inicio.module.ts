@@ -7,7 +7,6 @@ import { InicioRoutingModule } from './inicio-routing.module';
 import { InicioComponent } from './pages/inicio/inicio.component';
 
 // COMPONENTES LOCALES
-import { CardComponent } from './components/card/card.component';
 
 // COMPONENTES QUE IMPORTAMOS DESDE MATERIAL
 import { MatButtonModule } from '@angular/material/button';
@@ -21,7 +20,6 @@ import { IncioFinalComponent } from './incio-final/incio-final.component';
 @NgModule({
   declarations: [
     InicioComponent,
-    CardComponent,
     Card1Component,
     Card2Component,
     Card3Component,

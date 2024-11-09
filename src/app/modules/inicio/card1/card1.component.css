@@ -1,146 +1,167 @@
-/*H1 piola*/
+/* H1 Piola */
 h1 {
-    color: #ffffff;
-    font-size: 3rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    padding: 0.5em 1em;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
-    text-align: center;
-    width: fit-content;  /* Ajusta el ancho al contenido */
-    margin: 0 auto;      /* Centrado horizontal */
-    margin-bottom: 30px; /* Ajusta el valor para la separación deseada */
+  color: #ffffff;
+  font-size: 5vw; /* Utiliza vw para que el tamaño sea relativo al ancho de la ventana */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.5em 1em;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  width: fit-content;  /* Ajusta el ancho al contenido */
+  margin: 0 auto;      /* Centrado horizontal */
+  margin-bottom: 30px; /* Ajusta el valor para la separación deseada */
+}
+
+/* Diseño de Carrusel de Cards */
+
+/* Contenedor del Carrusel */
+.carrusel-container {
+  position: relative;
+  width: 100%; /* El contenedor ocupa todo el ancho disponible */
+  overflow: hidden; /* Oculta las tarjetas que salgan del contenedor */
+  margin: 0 auto; /* Centrado del contenedor */
+}
+
+.carrusel {
+  display: flex;
+  transition: transform 1s ease-in-out; /* Transición fluida al mover las tarjetas */
+  gap: 20px; /* Espacio entre tarjetas */
+}
+
+/* Estilos generales de las tarjetas */
+.card {
+  flex: 0 0 auto; /* Las tarjetas no se estiran ni reducen */
+  width: 300px; /* Ancho fijo para las tarjetas */
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Badge de lanzamiento */
+.badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: #0382ac;
+  color: white;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* Imagen del producto */
+.product-image {
+  width: 100%;
+  height: auto;
+}
+
+/* Contenido de la tarjeta */
+.card-content {
+  padding: 16px;
+}
+
+/* Logo de la tarjeta */
+.logo {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 8px;
+}
+
+/* Precio */
+.price {
+  font-size: 24px;
+  color: #333;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+/* Descripción */
+.description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+/* Cuotas */
+.installments {
+  font-size: 14px;
+  color: green;
+  margin-bottom: 8px;
+}
+
+.installments span {
+  font-weight: bold;
+}
+
+/* Ícono de favorito */
+.favorite {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #333;
+}
+
+.heart-icon {
+  color: #ff2600;
+}
+
+/* Botones del carrusel */
+button {
+  position: absolute;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  z-index: 10;
+  transform: translateY(-50%);
+  font-size: 24px;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 7vw; /* Aumentamos el tamaño del texto para pantallas más pequeñas */
   }
 
-
-
-/*Diseño de Carrusel de cards*/
-
-/* Ajustes generales */
-.card-container {
-    display: flex;
-    flex-wrap: nowrap; /* Las tarjetas deben alinearse en una fila */
-    gap: 0; /* Eliminamos el espacio aquí porque ahora lo controlaremos con margen */
-    justify-content: flex-start; /* Alineamos las tarjetas hacia la izquierda */
-    margin-bottom: 30px;
-    transition: transform 1s ease-in-out; /* Animación más suave para el desplazamiento */
-  }
-  
   .card {
-    width: 300px; /* Ajustamos el tamaño fijo de las tarjetas para que no se estiren */
-    flex-shrink: 0; /* Impide que las tarjetas se encojan */
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    overflow: hidden;
-    position: relative;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-right: 50px; /* Añadimos un margen entre las tarjetas para aumentar la distancia */
+    width: 250px; /* Ajustamos el tamaño de las tarjetas a 250px en pantallas pequeñas */
   }
-  
-  .badge {
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    background-color: #0382ac;
-    color: white;
-    font-size: 12px;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-weight: bold;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 8vw; /* En pantallas muy pequeñas, aún más grande */
   }
-  
-  .product-image {
-    width: 100%;
-    height: auto;
+
+  .card {
+    width: 180px; /* Ajustamos aún más el tamaño de las tarjetas en móviles pequeños */
   }
-  
-  .card-content {
-    padding: 16px;
-  }
-  
-  .logo {
-    width: 24px;
-    height: 24px;
-    margin-bottom: 8px;
-  }
-  
-  .price {
-    font-size: 24px;
-    color: #333;
-    font-weight: bold;
-    margin: 8px 0;
-  }
-  
-  .description {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 8px;
-  }
-  
-  .installments {
-    font-size: 14px;
-    color: green;
-    margin-bottom: 8px;
-  }
-  
-  .installments span {
-    font-weight: bold;
-  }
-  
-  .favorite {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    background: transparent;
-    border: none;
-    font-size: 18px;
-    cursor: pointer;
-    color: #333;
-  }
-  
-  .heart-icon {
-    color: #ff2600;
-  }
-  
-  /* Estilos del carrusel */
-  .carrusel-container {
-    position: relative;
-    width: 100vw; /* Ocupa todo el ancho de la pantalla */
-    margin: 0;
-    overflow: hidden; /* Oculta las tarjetas fuera de la vista */
-  }
-  
-  .carrusel {
-    display: flex;
-    transition: transform 1s ease-in-out; /* Animación fluida */
-  }
-  
-  button {
-    position: absolute;
-    top: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 15px;
-    cursor: pointer;
-    z-index: 10;
-    transform: translateY(-50%);
-    font-size: 24px;
-  }
-  
-  .prev {
-    left: 0;
-  }
-  
-  .next {
-    right: 0;
-  }
-  
-  button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
+}
+
+
