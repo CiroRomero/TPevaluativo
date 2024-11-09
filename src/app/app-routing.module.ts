@@ -24,11 +24,9 @@ const routes: Routes = [
     {
       path:"",loadChildren:()=>import('./modules/admin/admin.module').then(m=>m.AdminModule)
     },
-    /*
     {
       path:"",loadChildren:()=>import('./modules/nosotros/nosotros.module').then(m=>m.NosotrosModule)
     }
-    */
 ];
 
 @NgModule({

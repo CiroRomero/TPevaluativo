@@ -1,42 +1,5 @@
 
 
-  <h1>Indumentaria Destacados</h1>
-
-
-
-  <div class="carrusel-container">
-    <div class="carrusel">
-      <div class="card-container" *ngFor="let item of info">
-        <div class="card">
-          <div class="badge">{{ item.lanzamiento }}</div>
-          <img [src]="item.imagen" alt="{{ item.nombre }}" class="product-image" />
-          <div class="card-content">
-            <img [src]="item.logo" alt="Logo" class="logo" />
-            <div class="price">${{ item.precio | number }}</div>
-            <div class="description">{{ item.nombre }}</div>
-            <div class="installments">{{ item.cuotas }} ${{ item.precioCuotas | number }}</div>
-          </div>
-        </div>
-      </div>
-      <!-- Duplicamos el contenido del carrusel para crear el efecto infinito -->
-      <div class="card-container" *ngFor="let item of info">
-        <div class="card">
-          <div class="badge">{{ item.lanzamiento }}</div>
-          <img [src]="item.imagen" alt="{{ item.nombre }}" class="product-image" />
-          <div class="card-content">
-            <img [src]="item.logo" alt="Logo" class="logo" />
-            <div class="price">${{ item.precio | number }}</div>
-            <div class="description">{{ item.nombre }}</div>
-            <div class="installments">{{ item.cuotas }} ${{ item.precioCuotas | number }}</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <button class="prev" (click)="moveSlide(-1)">&#10094;</button>
-    <button class="next" (click)="moveSlide(1)">&#10095;</button>
-  </div>
-  
-
 
 
 
@@ -115,6 +78,7 @@
   <div class="square">
       <h1 id="title">Futbol Sala</h1>
       <h3 id="subtitle">CALZADO, CAMPERAS, ACCEOSRIOS Y MÁS</h3>
+      
       <button id="myButton">Ver Productos</button>
   </div>
 </div>

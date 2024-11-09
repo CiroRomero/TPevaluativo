@@ -14,8 +14,6 @@ import { ContactoComponent } from './contacto/contacto.component';
   imports: [
     CommonModule,
     NosotrosRoutingModule,
-    SobreNosotrosComponent,
-    ContactoComponent
   ],
   exports: [
     SobreNosotrosComponent,
