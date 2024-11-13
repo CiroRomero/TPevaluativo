@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./sobre-nosotros.component.css']
 })
 export class SobreNosotrosComponent {
-
+    brandName: string = 'GolGear';
+  
 }
