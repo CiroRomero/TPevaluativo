@@ -9,7 +9,7 @@
   </mat-menu>
 
   <span class="logo"><img src="./assets/LogoDelNavbar.png" alt=""></span>
-    <button id="menuInicio" mat-button routerLink="/inicio" class="letras">Inicio</button>
+    <button id="menuInicio" mat-button routerLink="/inicio" >Inicio</button>
 
   <!-- Menu desplegable: SECCION DE PRODUCTOS -->
   <button id="menuProducto" mat-button [matMenuTriggerFor]="producto">Productos</button>
@@ -20,9 +20,9 @@
     <button mat-menu-item routerLink="/accesorios" class="letranegra">Accesorios</button>
 
   </mat-menu>
-
   <button id="menuInicio" mat-button routerLink="/sobrenosotros" >Sobre Nosotros</button>
   <button id="menuInicio" mat-button routerLink="/contacto" >Contacto</button>
+  <button id="menuAdmin" mat-button routerLink="/admin">Admin</button>
 
 
 
@@ -37,8 +37,8 @@
     <button mat-menu-item (click)="cerrarSesion()" *ngIf="deslogueado">Cerrar Sesión</button>
   </mat-menu>
 
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon class="letras">shopping_cart</mat-icon>
+  <button mat-icon-button routerLink="/carrito" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>shopping_cart</mat-icon>
   </button>
 
      <!--Label Para Modo Oscuro-->

@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 import * as CryptoJS from 'crypto-js';
 // Importamos paquetería de SweetAlert para alertas personalizadas
 import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -25,7 +26,7 @@ export class RegistroComponent {
     nombre: '',
     apellido: '',
     email: '',
-    rol: '',
+    rol: 'usuario', // -> designamos un rol por defecto para los usuarios que se registren
     password: ''
   }
 
@@ -42,7 +43,7 @@ export class RegistroComponent {
   // FUNCIÓN ASINCRONICA PARA EL REGISTRO
   async registrar(){
     // CREDENCIALES = información que ingrese el usuario
-    
+  
     const credenciales = {
       email: this.usuarios.email,
       password: this.usuarios.password
@@ -109,7 +110,7 @@ export class RegistroComponent {
       nombre: this.usuarios.nombre = '',
       apellido: this.usuarios.apellido = '',
       email: this.usuarios.email = '',
-      rol: this.usuarios.rol = '',
+      rol: this.usuarios.rol = 'vis',
       password: this.usuarios.password = ''
     }
   }
