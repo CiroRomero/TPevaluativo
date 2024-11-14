@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './modules/inicio/pages/inicio/inicio.component';
 import { rutaProtegidaGuard } from './guards/ruta-protegida.guard';
+
 const routes: Routes = [
     // Ruta común -> 1 solo componente
     {
@@ -22,6 +23,7 @@ const routes: Routes = [
     {
       path:"",loadChildren:()=>import('./modules/autentificacion/autentificacion.module').then(m=>m.AutentificacionModule)
     },
+    
     {
       path:"",loadChildren:()=>import('./modules/admin/admin.module').then(m=>m.AdminModule)
     },
@@ -29,11 +31,15 @@ const routes: Routes = [
       path:"",loadChildren:()=>import('./modules/carrito/carrito.module').then(m=>m.CarritoModule)
     },
     {
-    path:"",loadChildren:()=>import('./modules/admin/admin.module').then(m=>m.AdminModule),
-    // Especificamos que la ruta de administrador va a ser protegida con un guardián
-    // Y espera un rol de tipo "admin"
-    canActivate: [ rutaProtegidaGuard ], data: { role: 'admin' }
-  }
+      path:"",loadChildren:()=>import('./modules/contacto/contacto.module').then(m=>m.ContactoModule)
+    },
+   
+    {
+      path:"",loadChildren:()=>import('./modules/admin/admin.module').then(m=>m.AdminModule),
+      // Especificamos que la ruta de administrador va a ser protegida con un guardián
+      // Y espera un rol de tipo "admin"
+      canActivate: [ rutaProtegidaGuard ], data: { role: 'admin' }
+    },
 ];
 
 @NgModule({
