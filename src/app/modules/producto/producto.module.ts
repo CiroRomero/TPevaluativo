@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatTabsModule } from '@angular/material/tabs';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 //ARCHIVO DE RUTAS
 import { ProductoRoutingModule } from './producto-routing.module';
@@ -19,23 +21,33 @@ import { IndumentariaComponent } from './pages/indumentaria/indumentaria.compone
 
 @NgModule({
   declarations: [
-    CardIndumentariaComponent,
-    CardBotinesComponent,
-    CardAccesoriosComponent,
-    CardGeneralComponent,
-    AccesoriosComponent,
-    BotinesComponent,
-    GeneralComponent,
     IndumentariaComponent,
+    BotinesComponent,
+    AccesoriosComponent,
+    GeneralComponent,
+    CardAccesoriosComponent,
+    CardBotinesComponent,
+    CardGeneralComponent,
+    CardIndumentariaComponent
+    
     
   ],
   imports: [
     CommonModule,
-    ProductoRoutingModule
+    ProductoRoutingModule,
+    MatTabsModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
 
   exports: [
-    
+    AccesoriosComponent,
+    BotinesComponent,
+    GeneralComponent,
+    IndumentariaComponent,
+    MatTabsModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ProductoModule { }

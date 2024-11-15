@@ -2,25 +2,25 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // IMPORTACIONES DEL MODULO PRODUCTO
-import { CardAccesoriosComponent } from './components/card-accesorios/card-accesorios.component';
-import { CardBotinesComponent } from './components/card-botines/card-botines.component';
-import { CardIndumentariaComponent } from './components/card-indumentaria/card-indumentaria.component';
-import { CardGeneralComponent } from './components/card-general/card-general.component';
+import { IndumentariaComponent } from './pages/indumentaria/indumentaria.component';
+import { BotinesComponent } from './pages/botines/botines.component';
+import { AccesoriosComponent } from './pages/accesorios/accesorios.component';
+import { GeneralComponent } from './pages/general/general.component';
 
 // Este módulo solo se encarga de las rutas relacionadas con productos
 const routes: Routes = [
   { 
-    path: 'indumentaria', component: CardIndumentariaComponent
+    path: 'indumentaria', component: IndumentariaComponent
   },
   { 
-    path: 'botines', component: CardBotinesComponent
+    path: 'botines', component: BotinesComponent
    },
   {
-     path: 'accesorios', component: CardAccesoriosComponent
+     path: 'accesorios', component: AccesoriosComponent
     },
 
   { 
-    path: 'general', component: CardGeneralComponent 
+    path: 'general', component: GeneralComponent 
   }
 ];
 
