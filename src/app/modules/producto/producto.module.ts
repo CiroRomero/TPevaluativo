@@ -11,6 +11,10 @@ import { CardIndumentariaComponent } from './components/card-indumentaria/card-i
 import { CardBotinesComponent } from './components/card-botines/card-botines.component';
 import { CardAccesoriosComponent } from './components/card-accesorios/card-accesorios.component';
 import { CardGeneralComponent } from './components/card-general/card-general.component';
+import { AccesoriosComponent } from './pages/accesorios/accesorios.component';
+import { BotinesComponent } from './pages/botines/botines.component';
+import { GeneralComponent } from './pages/general/general.component';
+import { IndumentariaComponent } from './pages/indumentaria/indumentaria.component';
 
 
 @NgModule({
@@ -19,6 +23,10 @@ import { CardGeneralComponent } from './components/card-general/card-general.com
     CardBotinesComponent,
     CardAccesoriosComponent,
     CardGeneralComponent,
+    AccesoriosComponent,
+    BotinesComponent,
+    GeneralComponent,
+    IndumentariaComponent,
     
   ],
   imports: [
