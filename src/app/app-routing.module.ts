@@ -4,15 +4,24 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './modules/inicio/pages/inicio/inicio.component';
 import { rutaProtegidaGuard } from './guards/ruta-protegida.guard';
+import { ContactoComponent } from './modules/nosotros/contacto/contacto.component';
+import { SobreNosotrosComponent } from './modules/nosotros/sobre-nosotros/sobre-nosotros.component';
 const routes: Routes = [
     // Ruta común -> 1 solo componente
     {
       path:"",component:InicioComponent
     },
+    {
+      path:"contacto",component:ContactoComponent
+    },
+    {
+      path:"sobrenosotros",component:SobreNosotrosComponent
+    },
     // Carga perezosa -> 1 módulo
     // loadChildren: indica una ruta hija
     // ()=>import: ruta de dónde viene el módulo
     // .then: promesa/ función asincronica
+   
     {
       path:"",loadChildren:()=>import('./modules/inicio/inicio.module').then(m=>m.InicioModule)
     },

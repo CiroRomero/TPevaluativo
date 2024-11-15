@@ -6,6 +6,9 @@
   <mat-menu #secciones="matMenu">
     <button mat-menu-item routerLink="/inicio" class="letras">Inicio</button>
     <button mat-menu-item [matMenuTriggerFor]="producto" class="letras">Productos</button>
+    <button  mat-menu-item routerLink="/sobrenosotros" >Sobre Nosotros</button>
+    <button  mat-menu-item routerLink="/contacto" >Contacto</button>
+    <button  mat-menu-item routerLink="/admin">Admin</button>
   </mat-menu>
 
   <span class="logo"><img src="./assets/LogoDelNavbar.png" alt=""></span>
@@ -22,7 +25,7 @@
   </mat-menu>
   <button id="menuInicio" mat-button routerLink="/sobrenosotros" >Sobre Nosotros</button>
   <button id="menuInicio" mat-button routerLink="/contacto" >Contacto</button>
-  <button id="menuAdmin" mat-button routerLink="/admin">Admin</button>
+  <button  mat-button routerLink="/admin">Admin</button>
 
 
 

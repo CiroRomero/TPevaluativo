@@ -9,11 +9,14 @@ import { ContactoComponent } from './contacto/contacto.component';
 @NgModule({
   declarations: [
     SobreNosotrosComponent,
+    NosotrosRoutingModule,
     ContactoComponent
   ],
   imports: [
     CommonModule,
-    NosotrosRoutingModule,
+    ContactoComponent,
+    SobreNosotrosComponent,
+    NosotrosRoutingModule
   ],
   exports: [
     SobreNosotrosComponent,
