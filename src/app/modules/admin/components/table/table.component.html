@@ -13,8 +13,8 @@
     </thead>
 
     <tbody>
-        <tr *ngFor="let producto of coleccionProductos">
-            <th scope="row">1</th>
+        <tr *ngFor="let producto of coleccionProductos ; let i = index">
+            <th scope="row">{{i + 1}}</th>
 
             <td>
                 <img src="{{producto.imagen}}" alt="{{producto.alt}}" width="100px">
@@ -65,13 +65,13 @@
                 <div class="mb-3">
                     <label class="form-label">Ingrese el nombre del producto:</label>
                     <input class="form-control" type="text" formControlName="nombre"
-                        placeholder="Ej.: Medias de chanchitos">
+                        placeholder="Ej.: camiseta de Argentina">
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Ingrese descripción del producto:</label>
                     <input class="form-control" type="text" formControlName="descripcion"
-                        placeholder="Ej.: Medias hechas de  algodón">
+                        placeholder="Ej.: Botines de cespet sintetico">
                 </div>
 
                 <div class="mb-3">
