@@ -1,30 +1,95 @@
-.container{
+/* Estilos generales */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #13072e, #000000); /* Fondo degradado morado a negro */
+    color: #ecf0f1;
+    margin: 0;
+    padding: 20px;
     display: flex;
-    padding: 10px;
-    text-align: center;
     justify-content: center;
-
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Evitar scroll durante la animación */
+    position: relative;
 }
 
-
-
-
-.boton {
-    width: 335px;
-    margin: auto;
-    background-color: #606060; /* Cambia el color de fondo */
-    color: white; /* Color del texto */
-    padding: 20px 100px; /* Tamaño del botón */
-    font-size: 18px; /* Tamaño del texto */
-    border: none; /* Sin borde */
-    border-radius: 25px; /* Bordes redondeados */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); /* Sombra suave */
-    transition: background-color 0.3s, box-shadow 0.3s; /* Animación suave al pasar el ratón */
+body::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    width: 140%;
+    height: 140%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 60%);
+    transform: rotate(25deg);
 }
 
-.boton:hover {
-    background-color: #383838; /* Color al hacer hover */
-    box-shadow: 0 6px 8px rgba(255, 255, 255, 0.2); /* Sombra más intensa al hacer hover */
+.container {
+    background: rgba(0, 0, 0, 0.6); /* Fondo translúcido */
+    border-radius: 15px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideIn 1.5s ease-out forwards;
 }
 
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    color: #ffdd57; /* Dorado elegante */
+    margin-bottom: 30px;
+    font-size: 2.8rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ffdd57, #ffa726); /* Degradado dorado */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.icon {
+    font-size: 100px;
+    color: #ffdd57; /* Color del icono */
+    margin-bottom: 30px;
+}
+
+.form-field {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(90deg, #ffdd57, #ffa726); /* Color del botón */
+    color: #333; /* Color del texto del botón */
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(90deg, #ffa726, #ffdd57); /* Cambio de dirección del degradado en hover */
+}
