@@ -1,154 +1,155 @@
 .row {
     display: flex;
-    justify-content: center; /* Centra las cards horizontalmente */
-    align-items: center; /* Centra las cards verticalmente */
-    flex-wrap: wrap; /* Permite que las cards se ajusten a múltiples filas si es necesario */
-    gap: 2rem; /* Espacio entre las cards */
-    padding: 2rem; /* Espaciado interno alrededor del contenedor */
+    justify-content: center;
+    align-items: flex-start; /* Ajusta las cards al principio para mejor alineación */
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
 }
 
+/* Estilo mejorado para las tarjetas */
 .card {
-    background-color: #F9F9F9; /* Fondo neutro para que el contenido destaque */
-    border-radius: 15px; /* Bordes redondeados para un look más suave */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera alrededor de las cards */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para cambios al hacer hover */
-    padding: 1rem; /* Espacio interno en la card */
-    max-width: 300px; /* Limita el tamaño máximo de la card */
-    text-align: center; /* Centra todo el contenido dentro de la card */
+    background: linear-gradient(135deg, #ffffff, #f4f4ff); /* Gradiente suave */
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    max-width: 320px; /* Ampliar ligeramente */
+    padding: 1.5rem;
+    text-align: center;
 }
 
 .card:hover {
-    transform: translateY(-10px); /* Levanta la card ligeramente al hacer hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta la sombra para darle más énfasis al hover */
-
-    background-color: #E0E0FF; /* Cambia el color de fondo al hacer hover */
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #ececff, #d4d4ff); /* Cambia gradiente al hacer hover */
 }
 
 .card img {
-    width: 100%; /* Ajusta la imagen al ancho de la card */
-    height: 200px; /* Establece una altura fija */
-    object-fit: cover; /* Asegura que la imagen se recorte para llenar el contenedor sin distorsionarse */
-    border-radius: 15px 15px 15px 15px; /* Bordes redondeados solo en la parte superior de la imagen */
+    width: 100%;
+    height: 220px; /* Ligeramente más alto */
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 1rem;
 }
 
-.card h1 {
-    font-size: 1.5rem; /* Tamaño de fuente grande para el título */
-    color: #333333; /* Color de texto gris oscuro para mejor legibilidad */
-    margin-bottom: 1rem; /* Espacio debajo del título */
-    max-height: 3rem; /* Altura máxima para el título */
-    overflow: hidden; /* Oculta el texto que exceda la altura máxima */
-    text-overflow: ellipsis; /* Añade puntos suspensivos al final del texto si es demasiado largo */
+.card h5 {
+    font-size: 1.25rem;
+    color: #444;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .card p {
-    font-size: 1rem; /* Tamaño estándar de fuente para el texto */
-    color: #666666; /* Color gris claro para el texto descriptivo */
-    margin-bottom: 1rem; /* Espacio debajo del texto */
-    max-height: 4rem; /* Altura máxima para el párrafo */
-    overflow: hidden; /* Oculta el texto que exceda la altura máxima */
-    text-overflow: ellipsis; /* Añade puntos suspensivos al final del texto si es demasiado largo */
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
 }
 
 .card button {
-    background-color: #7676FF; /* Color del botón igual al color del navbar */
-    color: white; /* Texto del botón en blanco para mejor contraste */
-    border: none; /* Sin borde en el botón */
-    padding: 0.7rem 1.5rem; /* Relleno del botón para hacerlo más grande y cómodo de presionar */
-    border-radius: 25px; /* Botones redondeados para un estilo más suave y moderno */
-    cursor: pointer; /* Cambia el cursor a una mano para indicar que es clicable */
-    transition: background-color 0.3s ease; /* Transición suave al cambiar de color */
+    background-color: #4a90e2; /* Azul moderno */
+    color: white;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card button:hover {
-    background-color: #FF7676; /* Cambia a un color complementario al hacer hover en el botón */
+    background-color: #357ab7; /* Azul más oscuro */
 }
 
-/* MEDIA QUERYS PARA HACER RESPONSIVO */
+/* Estilo mejorado para el modal */
+.modal-content {
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
 
+.modal-header {
+    background: linear-gradient(135deg, #4a90e2, #357ab7); /* Gradiente azul */
+    color: white;
+    padding: 1.5rem;
+}
+
+.modal-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.modal-body {
+    padding: 2rem;
+    text-align: center;
+}
+
+.modal-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-footer {
+    background-color: #f8f8f8;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-footer .btn-primary {
+    background-color: #4a90e2;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.modal-footer .btn-primary:hover {
+    background-color: #357ab7;
+}
+
+.modal-footer .btn-secondary {
+    background-color: #cccccc;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.modal-footer .btn-secondary:hover {
+    background-color: #aaaaaa;
+}
+
+/* Media queries para dispositivos pequeños */
 @media (max-width: 768px) {
     .card {
         max-width: 100%;
+    }
+
+    .row {
+        gap: 1rem;
     }
 }
 
 @media (max-width: 480px) {
     .row {
         flex-direction: column;
-        align-items: stretch;
+        align-items: center;
     }
 
     .card {
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .modal-body img {
+        margin-bottom: 1rem;
     }
 }
 
-
-/* ESTILOS PERSONALIZADOS PARA EL MODAL */
-.modal-content {
-    border-radius: 15px; /* Bordes redondeados */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
-    overflow: hidden; /* Asegura que los bordes redondeados se apliquen correctamente */
-}
-
-.modal-header {
-    background-color: #7676FF; /* Color de fondo para el encabezado */
-    color: white; /* Color del texto en el encabezado */
-    border-bottom: none; /* Sin borde inferior */
-    padding: 1.5rem; /* Espaciado interno */
-}
-
-.modal-title {
-    font-size: 1.75rem; /* Tamaño de fuente más grande para el título */
-    margin: 0; /* Sin margen */
-}
-
-.btn-close {
-    background-color: transparent; /* Fondo transparente */
-    border: none; /* Sin borde */
-    color: white; /* Color del icono de cierre */
-    font-size: 1.25rem; /* Tamaño del icono de cierre */
-}
-
-.modal-body {
-    padding: 2rem; /* Espaciado interno */
-    text-align: center; /* Centra el contenido */
-}
-
-.modal-body img {
-    max-width: 100%; /* La imagen se ajusta al ancho del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-    border-radius: 10px; /* Bordes redondeados para la imagen */
-    margin-bottom: 1rem; /* Espacio debajo de la imagen */
-}
-
-.modal-footer {
-    background-color: #f1f1f1; /* Color de fondo para el pie del modal */
-    border-top: none; /* Sin borde superior */
-    padding: 1.5rem; /* Espaciado interno */
-    display: flex; /* Flexbox para alinear los botones */
-    justify-content: space-between; /* Espacio entre los botones */
-}
-
-.modal-footer .btn {
-    border-radius: 25px; /* Bordes redondeados para los botones */
-    padding: 0.7rem 1.5rem; /* Relleno para los botones */
-    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
-}
-
-.modal-footer .btn-primary {
-    background-color: #7676FF; /* Color del botón principal */
-    border: none; /* Sin borde */
-}
-
-.modal-footer .btn-primary:hover {
-    background-color: #5757d1; /* Color del botón principal al hacer hover */
-}
-
-.modal-footer .btn-secondary {
-    background-color: #cccccc; /* Color del botón secundario */
-    border: none; /* Sin borde */
-}
-
-.modal-footer .btn-secondary:hover {
-    background-color: #aaaaaa; /* Color del botón secundario al hacer hover */
-}
