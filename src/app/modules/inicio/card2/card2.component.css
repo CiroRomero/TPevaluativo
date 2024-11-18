@@ -17,14 +17,14 @@ h1 {
 /* Diseño de Carrusel de Cards */
 
 /* Contenedor del Carrusel */
-.carrusel-container {
+.carrusel2-container {
   position: relative;
   width: 100%; /* El contenedor ocupa todo el ancho disponible */
   overflow: hidden; /* Oculta las tarjetas que salgan del contenedor */
   margin: 0 auto; /* Centrado del contenedor */
 }
 
-.carrusel {
+.carrusel2 {
   display: flex;
   transition: transform 1s ease-in-out; /* Transición fluida al mover las tarjetas */
   gap: 20px; /* Espacio entre tarjetas */

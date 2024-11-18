@@ -108,9 +108,9 @@ export class Card2Component {
     }
 
     const newTransform = `-${this.slideIndex * (100 / this.itemsToShow)}%`;
-    const carrusel = document.querySelector('.carrusel') as HTMLElement;
-    if (carrusel) {
-      carrusel.style.transform = `translateX(${newTransform})`;
+    const carrusel2 = document.querySelector('.carrusel2') as HTMLElement;
+    if (carrusel2) {
+      carrusel2.style.transform = `translateX(${newTransform})`;
     }
   }
 
