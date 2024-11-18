@@ -36,7 +36,7 @@ mostrarProductoBotines(){
     // Si la categoría del producto es igual a "juguetes", se enviará a la 
     // colección de juguetes específicada
 
-    if(producto.categoria === "botines"){
+    if(producto.categoria === "Botines"){
       // .push: sube o agrega un item a una colección
       this.coleccionBotines.push(producto);
     }

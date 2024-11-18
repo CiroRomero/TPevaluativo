@@ -36,7 +36,7 @@ mostrarProductoIndumentaria(){
     // Si la categoría del producto es igual a "juguetes", se enviará a la 
     // colección de juguetes específicada
 
-    if(producto.categoria === "indumentaria"){
+    if(producto.categoria === "Indumentaria"){
       // .push: sube o agrega un item a una colección
       this.coleccionIndumentaria.push(producto);
     }
