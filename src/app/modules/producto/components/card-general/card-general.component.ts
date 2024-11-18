@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Producto } from 'src/app/models/producto';
 import { CrudService } from 'src/app/modules/admin/services/crud.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-card-general',
@@ -33,4 +34,14 @@ export class CardGeneralComponent {
    // Guarda información de un producto elegido por el usuario
    this.productoSeleccionado = info;
  }
+
+ iniciarcarrito(){
+
+  Swal.fire({
+    icon: "error",
+    title: "Oops...",
+    text: "Hubo un error. Estamos trabajando para solucionarlo.",
+  });
+ }
+
 }

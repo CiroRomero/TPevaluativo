@@ -11,7 +11,7 @@
                     <p class="card-text">{{producto.precio}}</p>
     
                     <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" 
-                     (click)="mostrarVer(producto)">
+                    data-bs-target="#coleccionProductos" (click)="mostrarVer(producto)">
                         Ver más
                     </button>
                 </div>
@@ -26,7 +26,7 @@
 
 
 <!-- Modal para ver más información -->
-<div class="modal fade"  *ngIf="modalVisible" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="coleccionProductos" *ngIf="modalVisible" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
     <div class="modal-dialog">
 
@@ -52,7 +52,7 @@
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Agregar al carrito</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="iniciarcarrito()"  >Agregar al carrito</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             </div>
         </div>

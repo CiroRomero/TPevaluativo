@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/modules/autentificacion/services/auth.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -46,4 +47,13 @@ export class NavbarComponent {
     }
   }
 
+
+  iniciarcarrito(){
+
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Hubo un error. Estamos trabajando para solucionarlo.",
+    });
+   }
 }
