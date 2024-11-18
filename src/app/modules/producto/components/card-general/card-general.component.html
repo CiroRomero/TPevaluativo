@@ -1,26 +1,24 @@
 <!-- Card para mostrar TODOS los productos que se hayan ingresado -->
 <div class="row">
 
-    <div class="col" *ngFor="let producto of coleccionProductos">
-
-        <div class="card" style="width: 18rem;">
-
-            <img src="{{producto.imagen}}" class="card-img-top" alt="{{producto.alt}}">
-
-            <div class="card-body">
-                <p class="card-text">${{producto.precio}}</p>
-
-                <h5 class="card-title">{{producto.nombre}}</h5>
-
-                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalCard"
-                    (click)="mostrarVer(producto)">
-                    Ver más
-                </button>
+    <div class="row">
+        <div class="col" *ngFor="let producto of coleccionProductos">
+            <div class="card" style="width: 18rem;">
+                <img src="{{producto.imagen}}" class="card-img-top" alt="{{producto.alt}}">
+    
+                <div class="card-body">
+                    <h5 class="card-title">{{producto.nombre}}</h5>
+                    <p class="card-text">{{producto.precio}}</p>
+    
+                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" 
+                     (click)="mostrarVer(producto)">
+                        Ver más
+                    </button>
+                </div>
             </div>
-
         </div>
-
     </div>
+    
 
 </div>
 
@@ -28,8 +26,10 @@
 
 
 <!-- Modal para ver más información -->
-<div class="modal fade" id="modalCard" *ngIf="modalVisible" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade"  *ngIf="modalVisible" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
     <div class="modal-dialog">
+
         <div class="modal-content">
 
             <div class="modal-header">
@@ -41,12 +41,14 @@
                 <img src="{{productoSeleccionado.imagen}}" alt="{{productoSeleccionado.alt}}">
 
                 <div class="mb-3">
+                    $ {{productoSeleccionado.precio}}
+                 </div>
+
+                <div class="mb-3">
                     {{productoSeleccionado.descripcion}}
                 </div>
 
-                <div class="mb-3">
-                    {{productoSeleccionado.precio}}
-                </div>
+                
             </div>
 
             <div class="modal-footer">
@@ -54,8 +56,15 @@
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             </div>
         </div>
+
     </div>
+
 </div>
+
+
+
+
+
 
 
 
