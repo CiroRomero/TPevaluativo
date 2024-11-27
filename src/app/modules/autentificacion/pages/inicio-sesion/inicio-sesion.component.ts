@@ -19,7 +19,7 @@ export class InicioSesionComponent {
     public servicioAuth: AuthService,
     public servicioFirestore: FirestoreService,
     public servicioRutas: Router,
-    public servicioCarrito: CarritoService
+    public servicioCarrito: CarritoService //Este NO
   ) { }
 
   // Importamos la interfaz de usuario e inicializamos vacío
@@ -32,6 +32,9 @@ export class InicioSesionComponent {
     password: ''
   }
 
+
+
+  
   // Función para el inicio de sesión
   async iniciarSesion() {
     // Las credenciales reciben la información que se envía desde la web
@@ -66,19 +69,25 @@ export class InicioSesionComponent {
        */
       const usuarioData = usuarioDoc.data() as Usuario;
 
-      // Hash de la contraseña ingresada por el usuario
+      // Se realiza un hash de la contraseña introducida por el usuario utilizando el algoritmo SHA-256
+      // 'credenciales.password' es la contraseña que el usuario ha ingresado.
       const hashedPassword = CryptoJS.SHA256(credenciales.password).toString();
 
-      if(hashedPassword !== usuarioData.password){
+      // Compara el hash de la contraseña introducida con la contraseña guardada en el sistema
+      // 'usuarioData.password' contiene la contraseña previamente guardada en el sistema (en este caso, ya está encriptada).
+      if (hashedPassword !== usuarioData.password) {
+        
         Swal.fire({
           text: "Contraseña incorrecta",
           icon: "error"
         })
-
+        //Limpia el input
         this.usuarioIngresado.password = '';
         return;
       }
 
+      // Llamada a un método 'iniciarSesion' del servicio de autenticación (servicioAuth)
+      // Se le pasan como parámetros el email y la contraseña que el usuario ha ingresado.
       const res = await this.servicioAuth.iniciarSesion(credenciales.email, credenciales.password)
       .then(res => {
         Swal.fire({
@@ -100,7 +109,7 @@ export class InicioSesionComponent {
           // Si es visitante, redirecciona a la vista de 'inicio'
           this.servicioRutas.navigate(['/inicio']);
 
-          this.servicioCarrito.iniciarCart();
+          this.servicioCarrito.iniciarCart(); //Este NO
         }
       })
       .catch(err => {

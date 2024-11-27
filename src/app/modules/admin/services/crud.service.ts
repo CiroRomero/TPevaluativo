@@ -46,6 +46,8 @@ export class CrudService {
         producto.imagen = url;
 
         const resultado = await this.productosCollection.doc(idProducto).set(producto);
+        //this.productosCollection.doc(idProducto): Se accede a la colección de productos en la base de datos y se selecciona el documento con el ID generado (idProducto).
+        //.set(producto): Luego, se usa el método set para almacenar el objeto producto en la base de datos con el ID generado.
 
         resolve(resultado);
       }catch(error){
@@ -53,6 +55,9 @@ export class CrudService {
       }
     })
   }
+
+
+
 
   // OBTENER productos
   obtenerProducto(){
@@ -63,27 +68,37 @@ export class CrudService {
     return this.productosCollection.snapshotChanges().pipe(map(action => action.map(a => a.payload.doc.data())));
   }
 
+
+
+
   // EDITAR productos
   modificarProducto(idProducto: string, nuevaData: Producto){
     // accedemos a la colección, buscamos por ID y actualizamos información
     return this.database.collection('producto').doc(idProducto).update(nuevaData);
   }
 
+
+
+
   // ELIMINAR productos
   eliminarProducto(idProducto: string, imagenUrl: string){
+    // idProducto: Se utiliza para localizar el documento del producto en la base de datos.
+    //imagenUrl: Es la URL de la imagen del producto en la BD.
     return new Promise((resolve, reject) => {
       try{
         // Definimos referencia local de Storage en el bloque "try"
-        const storage = getStorage();
+        const storage = getStorage(); //Donde esta guardada la imagen.
 
         // Definimos referencia local desde el almacenamiento de Storage
         const referenciaImagen = ref(storage, imagenUrl);
 
         // Eliminamos la imagen desde el almacenamiento
-        deleteObject(referenciaImagen)
+        deleteObject(referenciaImagen) //Este método elimina el archivo de imagen especificado
         .then((res) => {
           // Accedo a la colección, busco su ID y lo elimino
           const respuesta = this.productosCollection.doc(idProducto).delete();
+          //Después de eliminar la imagen, se elimina el producto de la base de datos. 
+          //Se localiza el documento del producto usando su idProducto y se elimina de la colección en Firestore.
           resolve(respuesta);
         })
         .catch(error => {
@@ -96,10 +111,14 @@ export class CrudService {
     })
   }
 
+
+
+
+
   // OBTENER url de las imágenes
   obtenerUrlImagen(respuesta: UploadResult){
     // Retorna URL obtnenida como REFERENCIA
-    return getDownloadURL(respuesta.ref);
+    return getDownloadURL(respuesta.ref); //Genera la URL pública de la imagen y luego la devuelve.
   }
 
   /**
@@ -117,7 +136,10 @@ export class CrudService {
       // accede a Storage (almacenamiento), ruta (carpeta) / nombre (nombreImagen)
       let referenciaImagen = ref(this.storage, ruta + '/' + nombre);
 
-      // Asignamos a la respuesta la información de la imagen subida
+      // Utilizamos el método uploadString para subir la imagen a Firebase Storage
+      // 'referenciaImagen' es la ubicación donde se almacenará la imagen en Firebase Storage.
+      // 'imagen' es el contenido de la imagen en formato 'data_url', que es una cadena en base64 representando la imagen.
+      // 'data_url' indica el tipo de contenido que estamos subiendo, es decir, una URL de datos.
       this.respuesta = await uploadString(referenciaImagen, imagen, 'data_url')
       .then(resp => {
         return resp;

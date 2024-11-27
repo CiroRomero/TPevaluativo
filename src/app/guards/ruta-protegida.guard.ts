@@ -10,17 +10,19 @@ import { Router } from '@angular/router';
 // Operadores de tipo OBSERVABLES
 import { map, switchMap, of, from } from 'rxjs';
 
-export const rutaProtegidaGuard: CanActivateFn = (route, state) => {
+//rutaProtegidaGuard: Se ejecuta cuandointenta acceder a una ruta protegida.//CanActivateFn: Define una función que decide si una ruta puede activarse.
+export const rutaProtegidaGuard: CanActivateFn = (route, state) => { 
   // Inyectamos/ instanciamos servicio de autentificación
-  const servicioAuth = inject(AuthService);
+  const servicioAuth = inject(AuthService); //Se inyectan el servicios de autenticación.
 
   // Inyectamos/ instanciamos servicio de rutas
-  const servicioRutas = inject(Router);
+  const servicioRutas = inject(Router); //Se inyectan el servicios enrutamiento.
 
   // Especificamos el rol esperado en el guardián
   const rolEsperado = "admin";
 
-  return from (servicioAuth.obtenerUid()).pipe(
+  return from (servicioAuth.obtenerUid()).pipe( //obtenerUid(): Verifica si el usuario está autenticado (devuelve su ID si lo está).
+    //switchMap: Si el usuario tiene un uid, se continúa con otra comprobación.
     switchMap(uid => {
       if (uid) {
         return servicioAuth.obtenerRol(uid).pipe(

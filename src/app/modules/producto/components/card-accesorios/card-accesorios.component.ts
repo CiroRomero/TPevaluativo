@@ -21,28 +21,30 @@ modalVisible: boolean = false;
 
 constructor(public servicioCrud: CrudService){}
 
-ngOnInit(): void{
+ngOnInit(): void {
+  // Llama al servicio para obtener la lista de productos desde la base de datos
   this.servicioCrud.obtenerProducto().subscribe(producto => {
+    // Almacena los productos obtenidos en la variable local 'coleccionProductos'
     this.coleccionProductos = producto;
 
-    // mostrar la colección actual de juguetes
+    // Llama a la función para filtrar y mostrar los productos de tipo accesorios
     this.mostrarProductoAccesorios();
-  })
+  });
 }
 
-// Función para filtrar los productos que sean del tipo "juguetes"
-mostrarProductoAccesorios(){
-  // forEach: itera la colección
-  this.coleccionProductos.forEach(producto => {
-    // Si la categoría del producto es igual a "juguetes", se enviará a la 
-    // colección de juguetes específicada
 
-    if(producto.categoria === "Accesorios"){
-      // .push: sube o agrega un item a una colección
+// Función para filtrar los productos que pertenezcan a la categoría "Accesorios"
+mostrarProductoAccesorios() {
+  // Itera sobre cada producto de la colección general
+  this.coleccionProductos.forEach(producto => {
+    // Verifica si la categoría del producto es "Accesorios"
+    if (producto.categoria === "Accesorios") {
+      // Agrega el producto a la colección específica de accesorios
       this.coleccionAccesorios.push(producto);
     }
-  })
+  });
 }
+
 
 // Muestra información completa de un producto elegido por el usuario
 mostrarVer(info: Producto){
@@ -51,6 +53,9 @@ mostrarVer(info: Producto){
   this.productoSeleccionado = info;
 }
 
+
+
+//ESTE NOOOOO
 iniciarcarrito(){
 
   Swal.fire({

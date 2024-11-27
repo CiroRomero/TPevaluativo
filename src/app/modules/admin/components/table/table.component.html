@@ -1,3 +1,4 @@
+<!---------------------------Primera Parte--------------------------->
 <table class="table">
     <thead>
         <tr>
@@ -44,6 +45,14 @@
         </tr>
     </tbody>
 </table>
+
+
+
+
+
+
+<!---------------------------Segunda Parte--------------------------->
+
 
 <!-- BOTÓN PARA AGREGAR PRODUCTOS -->
 <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#agregarProducto">
@@ -100,7 +109,7 @@
                         (change)="cargarImagen($event)" -> ejecuta el evento de cargarImagen que definimos 
                         en la lógica del componente
                     -->
-                    <input type="file" accept="imagen/*" (change)="cargarImagen($event)">
+                    <input type="file" accept="imagen/*" (change)="cargarImagen($event)"> <!--El input de tipo file permite subir una imagen.-->
                 </div>
 
                 <div class="mb-3">
@@ -124,6 +133,17 @@
         </div>
     </div>
 </div>
+
+
+
+
+
+
+
+
+
+<!---------------------------Tercera Parte--------------------------->
+
 
 <!-- MODAL PARA EDITAR PRODUCTOS -->
 <!-- Cambiamos nombre de variable que itera la colección -->
@@ -193,6 +213,13 @@
         </div>
     </div>
 </div>
+
+
+
+
+
+
+<!---------------------------Cuarta Parte--------------------------->
 
 <!-- MODAL PARA ELIMINAR PRODUCTO -->
 <div class="modal fade" id="eliminarProducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

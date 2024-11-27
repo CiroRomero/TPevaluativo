@@ -30,11 +30,17 @@ export class AuthService {
     return this.auth.createUserWithEmailAndPassword(email, password);
   }
 
+
+
   // Función para INICIO DE SESIÓN
   iniciarSesion(email: string, password: string){
     // Validar el email y la contraseña
     return this.auth.signInWithEmailAndPassword(email, password);
+    //Este es un método de Firebase Authentication que intenta iniciar sesión con el correo electrónico y la contraseña proporcionados.
   }
+
+
+
 
   // Función para CERRAR SESIÓN
   cerrarSesion(){
@@ -42,45 +48,70 @@ export class AuthService {
     return this.auth.signOut();
   }
 
-  // Función para tomar UID
-  async obtenerUid(){
-    // Nos va a generar una promesa, y la constante la va a capturar
-    const user = await this.auth.currentUser;
 
-    /*
-      Si el usuario no respeta la estructura de la interfaz /
-      Si tuvo problemas para el registro -> ej.: mal internet
-    */
-    if(user == null){
-      return null;
-    } else {
-      return user.uid;
-    }
-  }
 
-  // Función que busca un usuario en la colección de 'usuarios' cuyo correo electrónico coincida con el valor proporcionado
-  obtenerUsuario(email: string){
-    return this.servicioFirestore.collection('usuarios', ref => ref.where('email', '==', email)).get().toPromise();
-  }
 
-  // FUNCIÓN PARA RECUPERAR ROL DE USUARIO
-  obtenerRol(uid: string): Observable <string | null> {
-    /*
-      Retornamos del servicio de Firestore la colección de usuarios, buscando por UID
-      Observamos cambios en valores, mapeamos al documento de 'usuario' e identificamos
-      el atributo de rol (aún si este es nulo)
-    */
-    return this.servicioFirestore.collection('usuarios').doc(uid).valueChanges()
-    .pipe(map((usuario: any) => usuario ? usuario.rol : null));
+// Función asíncrona para obtener el UID del usuario autenticado
+async obtenerUid() {
+  // Captura el usuario actualmente autenticado mediante el servicio de autenticación.
+  // `this.auth.currentUser` devuelve una promesa que contiene el usuario actual (si está autenticado).
+  const user = await this.auth.currentUser;
+
+  /*
+    Verificación de si el usuario es `null`:
+    - Si `user` es `null`, significa que no hay un usuario autenticado o que hubo un problema al obtener la información del usuario.
+    - Ejemplos de casos:
+      - El usuario no ha iniciado sesión.
+      - La sesión ha expirado.
+      - Problemas con la conexión a internet durante la autenticación.
+  */
+  if(user == null) {
+    // Retorna `null` si no se encontró un usuario autenticado.
+    return null;
+  } else {
+    // Si el usuario existe, devuelve su identificador único (UID).
+    return user.uid;
   }
+}
+
+
+
+
+
+
+// Busca un usuario en la colección 'usuarios' filtrando por correo electrónico
+obtenerUsuario(email: string) {
+  // Accede a la colección 'usuarios' y aplica un filtro donde 'email' coincide con el valor proporcionado
+  return this.servicioFirestore.collection('usuarios', ref => ref.where('email', '==', email))
+    .get()  // Realiza la consulta
+    .toPromise();  // Convierte el resultado en una promesa
+}
+
+
+
+
+
+
+ // Función para recuperar el rol de un usuario a partir de su UID
+obtenerRol(uid: string): Observable<string | null> {
+  // Accede a la colección 'usuarios' y al documento específico usando el UID
+  return this.servicioFirestore.collection('usuarios').doc(uid).valueChanges()
+    .pipe(
+      // Transforma los datos obtenidos: si existe el usuario, retorna su rol; si no, retorna null
+      map((usuario: any) => usuario ? usuario.rol : null)
+    );
+}
+
 
   // Obtiene el rol de la primera función y lo asigna a la propiedad privada local
   enviarRolUsuario(rol: string){
     this.rolUsuario = rol;
   }
 
-  // Obtiene el rol y lo retorna (ya sean alfanumericos o nulos)
-  obtenerRolUsuario(): string | null {
-    return this.rolUsuario;
-  }
+  // Función para obtener el rol almacenado del usuario
+obtenerRolUsuario(): string | null {
+  // Retorna el rol del usuario, que puede ser un valor alfanumérico o null
+  return this.rolUsuario;
+}
+
 }

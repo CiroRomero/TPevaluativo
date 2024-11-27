@@ -48,6 +48,9 @@ export class NavbarComponent {
   }
 
 
+
+
+  //ESTE NOOOOOOOOOO
   iniciarcarrito(){
 
     Swal.fire({
